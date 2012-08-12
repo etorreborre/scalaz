@@ -15,7 +15,7 @@ trait Spec
 
   addArguments(fullStackTrace)
 
-  def is = specFragments
+  def is = fragments
 
   addArguments(fullStackTrace)
 
