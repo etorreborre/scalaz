@@ -50,3 +50,11 @@ compile
 ~compile
 publish-local
 exit
+publish
+publish-local
+exit
+clean
+publish
+exit
+publish
+exit
