@@ -10,9 +10,8 @@ object build extends Build {
   type Sett = Project.Setting[_]
 
   lazy val standardSettings: Seq[Sett] = Defaults.defaultSettings ++ sbtrelease.ReleasePlugin.releaseSettings ++ Seq[Sett](
-    organization := "org.scalaz",
-    scalaVersion := "2.9.2",
-    crossScalaVersions := Seq("2.9.2", "2.10.0-M5"),
+    organization := "org.specs2",
+    scalaVersion := "2.10.0-M7",
     crossVersion := CrossVersion.full,
     resolvers += "Sonatype Releases" at "https://oss.sonatype.org/content/repositories/releases",
     scalacOptions <++= (scalaVersion).map((sv: String) => Seq("-deprecation", "-unchecked") ++ (if(sv.contains("2.10")) None else Some("-Ydependent-method-types"))),
@@ -91,6 +90,13 @@ object build extends Build {
       )
   ) ++ osgiSettings ++ Seq[Sett](
     OsgiKeys.additionalHeaders := Map("-removeheaders" -> "Include-Resource,Private-Package")
+  )
+
+  lazy val specs2_scalaz = Project(
+    id = "specs2-scalaz",
+    base = file("."),
+    settings = standardSettings ++ Unidoc.settings,
+    aggregate = Seq(core, concurrent, effect, xml)
   )
 
   lazy val scalaz = Project(
@@ -206,7 +212,7 @@ object build extends Build {
     settings = standardSettings ++Seq[Sett](
       name := "scalaz-tests",
       libraryDependencies ++= Seq(
-        "org.specs2" %% "specs2" % "1.11" % "test" cross CrossVersion.full,
+        "org.specs2" %% "specs2" % "1.12.1.1" % "test" cross CrossVersion.full,
         "org.scalacheck" %% "scalacheck" % "1.10.0" % "test" cross CrossVersion.full
       )
     )
