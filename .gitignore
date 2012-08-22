@@ -4,7 +4,7 @@ lib_managed
 project/boot
 full/project/boot
 src_managed
-target
+target/
 .DS_Store
 out
 tags

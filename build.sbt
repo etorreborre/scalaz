@@ -9,6 +9,8 @@ scalaVersion := "2.10.0-M7"
 
 crossScalaVersions := Seq("2.9.1-1", "2.9.2-RC2", "2.10.0-M2")
 
+crossVersion := CrossVersion.full
+
 /** Shell */
 shellPrompt := { state => System.getProperty("user.name") + "> " }
 
