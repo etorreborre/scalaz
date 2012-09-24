@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 trait MonadTrans[F[_[_], _]] {
   def liftM[G[_] : Monad, A](a: G[A]): F[G, A]

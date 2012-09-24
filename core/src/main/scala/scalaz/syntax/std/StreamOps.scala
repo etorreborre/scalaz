@@ -1,10 +1,10 @@
-package scalaz
+package org.specs2.internal.scalaz
 package syntax
 package std
 
-import scalaz.syntax.Ops
-import scalaz.{Monad, Tree, Zipper}
-import scalaz.std.{stream => s}
+import org.specs2.internal.scalaz.syntax.Ops
+import org.specs2.internal.scalaz.{Monad, Tree, Zipper}
+import org.specs2.internal.scalaz.std.{stream => s}
 
 
 trait StreamOps[A] extends Ops[Stream[A]] {

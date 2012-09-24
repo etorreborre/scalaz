@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 object Tag {
   // TODO According to Miles, @specialized doesn't help here. Maybe manually specialize.

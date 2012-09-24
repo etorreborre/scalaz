@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package scalacheck
 
 import org.scalacheck.{Arbitrary, Prop, Properties}

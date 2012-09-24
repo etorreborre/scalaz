@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -26,7 +26,7 @@ trait Comonad[F[_]] extends Copointed[F] with Cojoin[F] with Cobind[F] { self =>
   def comonadLaw = new ComonadLaws {}
 
   ////
-  val comonadSyntax = new scalaz.syntax.ComonadSyntax[F] { def F = Comonad.this }
+  val comonadSyntax = new org.specs2.internal.scalaz.syntax.ComonadSyntax[F] { def F = Comonad.this }
 }
 
 object Comonad {

@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package effect
 
 ////
@@ -15,7 +15,7 @@ trait LiftControlIO[F[_]]  { self =>
   // derived functions
 
   ////
-  val liftControlIOSyntax = new scalaz.syntax.effect.LiftControlIOSyntax[F] { def F = LiftControlIO.this }
+  val liftControlIOSyntax = new org.specs2.internal.scalaz.syntax.effect.LiftControlIOSyntax[F] { def F = LiftControlIO.this }
 }
 
 object LiftControlIO {

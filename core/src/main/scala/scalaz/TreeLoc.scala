@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 /**
  * A rose-tree zipper. Represents a [[scalaz.Tree]] together with a position in that tree.

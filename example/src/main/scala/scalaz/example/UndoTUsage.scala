@@ -1,10 +1,10 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 
-import scalaz.{syntax, std}
+import org.specs2.internal.scalaz.{syntax, std}
 import syntax.monad._
 import std.option._
-import scalaz.undo.UndoT
-import scalaz.undo.UndoT._
+import org.specs2.internal.scalaz.undo.UndoT
+import org.specs2.internal.scalaz.undo.UndoT._
 
 object UndoTUsage extends App {
   // TODO: Omitting the type parameters on hput leads to a compiler infinite loop

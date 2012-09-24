@@ -1,4 +1,4 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 
 object PartiallyApplied extends App {
   val f1: (String => Int) = _.length
@@ -7,7 +7,7 @@ object PartiallyApplied extends App {
   function1()
 
   def function1() {
-    import scalaz._
+    import org.specs2.internal.scalaz._
     import std.function._
     import syntax.monad._
 

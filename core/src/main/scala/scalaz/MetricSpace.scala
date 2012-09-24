@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -37,7 +37,7 @@ trait MetricSpace[F]  { self =>
   def metricSpaceLaw = new MetricSpaceLaw {}
 
   ////
-  val metricSpaceSyntax = new scalaz.syntax.MetricSpaceSyntax[F] { def F = MetricSpace.this }
+  val metricSpaceSyntax = new org.specs2.internal.scalaz.syntax.MetricSpaceSyntax[F] { def F = MetricSpace.this }
 }
 
 object MetricSpace {

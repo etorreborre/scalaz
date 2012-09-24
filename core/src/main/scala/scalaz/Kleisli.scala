@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 import Id._
 import annotation.unchecked.uncheckedVariance

@@ -1,9 +1,9 @@
-package scalaz
+package org.specs2.internal.scalaz
 package std
 
 import scala.Either.{LeftProjection, RightProjection}
-import scalaz.Isomorphism._
-import scalaz.Tags.{First, Last}
+import org.specs2.internal.scalaz.Isomorphism._
+import org.specs2.internal.scalaz.Tags.{First, Last}
 
 trait EitherInstances0 {
   implicit def eitherEqual[A, B](implicit A0: Equal[A], B0: Equal[B]): Equal[Either[A, B]] = new EitherEqual[A, B] {

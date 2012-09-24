@@ -1,4 +1,4 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 package xml
 package cursor
 
@@ -22,7 +22,7 @@ object Simple {
     </x:div>
 </html>"""
 
-  import scalaz._, Scalaz._, xml.Xml._
+  import org.specs2.internal.scalaz._, Scalaz._, xml.Xml._
 
   def main(args: Array[String]) {
     // Parse the document into a tree

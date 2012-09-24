@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -61,7 +61,7 @@ trait Unzip[F[_]]  { self =>
   }
 
   ////
-  val unzipSyntax = new scalaz.syntax.UnzipSyntax[F] { def F = Unzip.this }
+  val unzipSyntax = new org.specs2.internal.scalaz.syntax.UnzipSyntax[F] { def F = Unzip.this }
 }
 
 object Unzip {

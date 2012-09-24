@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 trait CoKleisli[F[_], A, B] { self =>
   def run(fa: F[A]): B

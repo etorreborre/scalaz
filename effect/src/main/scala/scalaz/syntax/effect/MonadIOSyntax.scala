@@ -1,8 +1,8 @@
-package scalaz
+package org.specs2.internal.scalaz
 package syntax
 package effect
 
-import scalaz.effect.MonadIO
+import org.specs2.internal.scalaz.effect.MonadIO
 
 /** Wraps a value `self` and provides methods related to `MonadIO` */
 trait MonadIOOps[F[_],A] extends Ops[F[A]] {

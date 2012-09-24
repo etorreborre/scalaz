@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package iteratee
 
 import effect._
@@ -14,8 +14,8 @@ trait Enumeratee2T[J, K, I, F[_]] {
 }
 
 trait Enumeratee2TFunctions {
-  import scalaz.syntax.bind._
-  import scalaz.syntax.order._
+  import org.specs2.internal.scalaz.syntax.bind._
+  import org.specs2.internal.scalaz.syntax.order._
 
   @inline private def lift[J, K, F[_]: Monad, A](iter: IterateeT[K, F, A]): IterateeT[J, ({type λ[α] = IterateeT[K, F, α] })#λ, A] =
     IterateeT.IterateeTMonadTrans[J].liftM[({type λ[α] = IterateeT[K, F, α]})#λ, A](iter)

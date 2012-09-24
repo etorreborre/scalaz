@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package typelevel
 
 import syntax.HLists._
@@ -113,7 +113,7 @@ object TypeClass {
 
   implicit def ShowI: TypeClass[Show] = new TypeClass[Show] with Empty {
 
-    import scalaz.std.string.stringInstance
+    import org.specs2.internal.scalaz.std.string.stringInstance
     import formatters.string.Strings
 
     def product[F, T <: HList](FHead: Show[F], FTail: Show[T]) = new Show[F :: T] {

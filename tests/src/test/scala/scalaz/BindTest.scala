@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 import std.AllInstances._
 import syntax.bind._

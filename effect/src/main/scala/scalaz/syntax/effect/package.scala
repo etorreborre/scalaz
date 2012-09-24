@@ -1,4 +1,4 @@
-package scalaz.syntax
+package org.specs2.internal.scalaz.syntax
 
 /**
  * Implicits to provide a convenient syntax to work with type classes

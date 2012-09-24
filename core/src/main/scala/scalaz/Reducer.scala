@@ -1,6 +1,6 @@
-package scalaz
+package org.specs2.internal.scalaz
 
-import scalaz.Tags.{Conjunction}
+import org.specs2.internal.scalaz.Tags.{Conjunction}
 
 
 /**

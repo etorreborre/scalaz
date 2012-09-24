@@ -1,9 +1,9 @@
-package scalaz.syntax
+package org.specs2.internal.scalaz.syntax
 
 import annotation.tailrec
-import scalaz.{Pointed, Monoid, NonEmptyList, Kleisli, Reader, \/}
+import org.specs2.internal.scalaz.{Pointed, Monoid, NonEmptyList, Kleisli, Reader, \/}
 
-import scalaz.Id._
+import org.specs2.internal.scalaz.Id._
 
 trait IdOps[A] extends Ops[A] {
   /**Returns `self` if it is non-null, otherwise returns `d`. */

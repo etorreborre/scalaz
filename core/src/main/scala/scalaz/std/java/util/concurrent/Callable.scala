@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package std.java.util.concurrent
 
 import java.util.concurrent.Callable

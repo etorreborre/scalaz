@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -11,7 +11,7 @@ trait Length[F[_]]  { self =>
   // derived functions
 
   ////
-  val lengthSyntax = new scalaz.syntax.LengthSyntax[F] { def F = Length.this }
+  val lengthSyntax = new org.specs2.internal.scalaz.syntax.LengthSyntax[F] { def F = Length.this }
 }
 
 object Length {

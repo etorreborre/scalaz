@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 import scala.math.{Ordering => SOrdering}
@@ -54,7 +54,7 @@ trait Order[F] extends Equal[F] { self =>
   def orderLaw = new OrderLaw {}
 
   ////
-  val orderSyntax = new scalaz.syntax.OrderSyntax[F] { def F = Order.this }
+  val orderSyntax = new org.specs2.internal.scalaz.syntax.OrderSyntax[F] { def F = Order.this }
 }
 
 object Order {

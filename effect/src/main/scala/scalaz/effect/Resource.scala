@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package effect
 
 ////
@@ -17,7 +17,7 @@ trait Resource[F]  { self =>
   }
 
   ////
-  val resourceSyntax = new scalaz.syntax.effect.ResourceSyntax[F] { def F = Resource.this }
+  val resourceSyntax = new org.specs2.internal.scalaz.syntax.effect.ResourceSyntax[F] { def F = Resource.this }
 }
 
 object Resource {

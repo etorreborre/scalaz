@@ -1,8 +1,8 @@
-package scalaz
+package org.specs2.internal.scalaz
 package syntax
 package effect
 
-import scalaz.effect.Resource
+import org.specs2.internal.scalaz.effect.Resource
 
 /** Wraps a value `self` and provides methods related to `Resource` */
 trait ResourceOps[F] extends Ops[F] {

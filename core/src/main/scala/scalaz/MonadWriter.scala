@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 trait MonadWriter[F[_, _], W] extends Monad[({type f[+x] = F[W, x]})#f] {
   implicit def W: Monoid[W]
@@ -6,7 +6,7 @@ trait MonadWriter[F[_, _], W] extends Monad[({type f[+x] = F[W, x]})#f] {
   def writer[A](v: (W, A)): F[W, A]
   def tell(w: W): F[W, Unit] = writer((w, ()))
 
-  val monadWriterSyntax = new scalaz.syntax.MonadWriterSyntax[F, W]{}
+  val monadWriterSyntax = new org.specs2.internal.scalaz.syntax.MonadWriterSyntax[F, W]{}
 }
 
 object MonadWriter {

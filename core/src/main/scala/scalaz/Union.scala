@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 /**
  * Union types using Curry-Howard isomorphism

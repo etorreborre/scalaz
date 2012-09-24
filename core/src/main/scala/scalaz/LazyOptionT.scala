@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 sealed trait LazyOptionT[F[+_], +A] {
   def run: F[LazyOption[A]]

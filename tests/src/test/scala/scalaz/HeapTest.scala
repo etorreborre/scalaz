@@ -1,8 +1,8 @@
-package scalaz
+package org.specs2.internal.scalaz
 
-import scalaz.scalacheck.ScalazProperties._
-import scalaz.scalacheck.ScalazArbitrary._
-import scalaz.std.AllInstances._
+import org.specs2.internal.scalaz.scalacheck.ScalazProperties._
+import org.specs2.internal.scalaz.scalacheck.ScalazArbitrary._
+import org.specs2.internal.scalaz.std.AllInstances._
 
 class HeapTest extends Spec {
   checkAll(equal.laws[Heap[Int]])

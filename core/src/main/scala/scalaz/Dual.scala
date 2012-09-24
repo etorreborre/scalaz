@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 object Dual extends DualInstances {
   def apply[A](a: A): (A @@ Tags.Dual) = Tag(a)

@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -77,7 +77,7 @@ trait Functor[F[_]]  { self =>
   }
   def functorLaw = new FunctorLaw {}
   ////
-  val functorSyntax = new scalaz.syntax.FunctorSyntax[F] { def F = Functor.this }
+  val functorSyntax = new org.specs2.internal.scalaz.syntax.FunctorSyntax[F] { def F = Functor.this }
 }
 
 object Functor {

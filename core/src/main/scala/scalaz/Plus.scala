@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -20,7 +20,7 @@ trait Plus[F[_]]  { self =>
   }
   def plusLaw = new PlusLaw {}
   ////
-  val plusSyntax = new scalaz.syntax.PlusSyntax[F] { def F = Plus.this }
+  val plusSyntax = new org.specs2.internal.scalaz.syntax.PlusSyntax[F] { def F = Plus.this }
 }
 
 object Plus {

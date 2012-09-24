@@ -1,8 +1,8 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 
 object TrampolineUsage extends App {
 
-  import scalaz._, Scalaz._, Free._
+  import org.specs2.internal.scalaz._, Scalaz._, Free._
 
   def quickSort[F[+ _] : Pointed, T: Order](xs: List[T]): Free[F, List[T]] = {
     xs match {
@@ -43,7 +43,7 @@ object TrampolineUsage extends App {
     println(sorted)
   }
 
-  import scalaz.concurrent._
+  import org.specs2.internal.scalaz.concurrent._
   import annotation.unchecked.uncheckedVariance
   type PromiseCov[+A] = Promise[A @uncheckedVariance]
 

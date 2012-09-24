@@ -1,4 +1,4 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 package xml
 package pp
 
@@ -22,7 +22,7 @@ object Tidy {
     </x:div>
 </html>"""
 
-  import scalaz.xml.Xml._
+  import org.specs2.internal.scalaz.xml.Xml._
 
   def main(args: Array[String]) {
     val r = in.parseXml

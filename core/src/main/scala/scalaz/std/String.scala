@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package std
 
 trait StringInstances {
@@ -85,5 +85,5 @@ trait StringFunctions {
 }
 
 object string extends StringInstances with StringFunctions {
-  object stringSyntax extends scalaz.syntax.std.ToStringOps
+  object stringSyntax extends org.specs2.internal.scalaz.syntax.std.ToStringOps
 }

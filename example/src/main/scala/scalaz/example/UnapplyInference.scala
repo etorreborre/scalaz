@@ -1,11 +1,11 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 
 /**Examples showing the use of Unapply to reduce the need for type annotations */
 object UnapplyInference extends App {
   eitherTBifunctor()
 
   def eitherTBifunctor() {
-    import scalaz._, Scalaz._
+    import org.specs2.internal.scalaz._, Scalaz._
 
     val either: (Int \/ Int) = \/.right(1)
     val eitherT = EitherT(some(either))
@@ -14,7 +14,7 @@ object UnapplyInference extends App {
   }
 
   def eitherTBitraverse() {
-    import scalaz._
+    import org.specs2.internal.scalaz._
     import std.list._, std.option._
     import syntax.all._
 
@@ -26,7 +26,7 @@ object UnapplyInference extends App {
 
   // Without Unapply
   def stateTraverse1 {
-    import scalaz._, Scalaz._
+    import org.specs2.internal.scalaz._, Scalaz._
     val ls = List(1, 2, 3)
     val traverseOpt: Option[List[Int]] = ls.traverse(a => some(a))
     val traverseState: State[Int, List[Int]] = ls.traverse[({type λ[α] = State[Int, α]})#λ, Int](a => State((x: Int) => (x + 1, a)))
@@ -34,7 +34,7 @@ object UnapplyInference extends App {
 
   // With Unapply (in the signature of traverseU)
   def stateTraverse2 {
-    import scalaz._, Scalaz._
+    import org.specs2.internal.scalaz._, Scalaz._
 
     val ls = List(1, 2, 3)
     val traverseOpt: Option[List[Int]] = ls.traverseU(a => some(a))
@@ -44,7 +44,7 @@ object UnapplyInference extends App {
   }
 
   def kleisliCompose() {
-    import scalaz._
+    import org.specs2.internal.scalaz._
     import std.option._
     import syntax.compose._
     import Kleisli._
@@ -54,7 +54,7 @@ object UnapplyInference extends App {
   }
 
   def functorSyntaxChaining() {
-    import scalaz._
+    import org.specs2.internal.scalaz._
     import syntax.functor._
     import std.either._
 

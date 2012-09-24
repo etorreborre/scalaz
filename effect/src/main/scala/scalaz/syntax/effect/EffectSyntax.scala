@@ -1,4 +1,4 @@
-package scalaz.syntax.effect
+package org.specs2.internal.scalaz.syntax.effect
 
 trait EffectSyntaxes {
 

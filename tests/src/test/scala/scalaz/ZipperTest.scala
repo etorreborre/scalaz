@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 import Scalaz._
 import NonEmptyList._
@@ -6,8 +6,8 @@ import Zipper._
 import syntax.equal._
 import org.scalacheck._
 import org.scalacheck.Prop._
-import scalaz.scalacheck.ScalazProperties._
-import scalaz.scalacheck.ScalazArbitrary._
+import org.specs2.internal.scalaz.scalacheck.ScalazProperties._
+import org.specs2.internal.scalaz.scalacheck.ScalazArbitrary._
 
 class ZipperTest extends Spec {
   // TODO retronym Get this working again under Scala 2.10.0-M6+

@@ -1,12 +1,12 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 package transformers
 package typecheck
 
 object TypeCheckerWithExplicitTypes_Monadic {
 
   import TypeCheckerWithExplicitTypesAST._
-  import scalaz.syntax.monad._
-  import scalaz.std.either._
+  import org.specs2.internal.scalaz.syntax.monad._
+  import org.specs2.internal.scalaz.std.either._
 
   def success(t: Type) = Right(t)
   def typeError(msg: String) = Left(msg)

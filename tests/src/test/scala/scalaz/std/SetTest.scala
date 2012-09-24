@@ -1,8 +1,8 @@
-package scalaz
+package org.specs2.internal.scalaz
 package std
 
 import std.AllInstances._
-import scalaz.scalacheck.ScalazProperties._
+import org.specs2.internal.scalaz.scalacheck.ScalazProperties._
 import org.scalacheck.Prop.forAll
 
 class SetTest extends Spec {

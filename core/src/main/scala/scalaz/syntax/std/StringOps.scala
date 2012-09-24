@@ -1,8 +1,8 @@
-package scalaz
+package org.specs2.internal.scalaz
 package syntax
 package std
 
-import scalaz.std.{string => s}
+import org.specs2.internal.scalaz.std.{string => s}
 
 trait StringOps extends Ops[String]{
   /**

@@ -1,8 +1,8 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 
 object NewTypeUsage extends App {
 
-  import scalaz._
+  import org.specs2.internal.scalaz._
   import std.anyVal.{booleanInstance, booleanDisjunctionNewTypeInstance, booleanConjunctionNewTypeInstance}
   import Tags.{Conjunction, Disjunction}
   import std.list.listInstance

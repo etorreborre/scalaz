@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package typelevel
 
 // This should be `package object syntax`, but is not, because that would lead

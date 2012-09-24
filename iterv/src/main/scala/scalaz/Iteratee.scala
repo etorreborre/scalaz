@@ -1,5 +1,5 @@
 // Legacy implementation of iteratees, for compatibility with Scalaz 6 */
-package scalaz
+package org.specs2.internal.scalaz
 import Scalaz._
 
 /** The input to an iteratee. */

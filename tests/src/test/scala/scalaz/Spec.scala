@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 import org.specs2.matcher._
 import org.specs2.mutable.FragmentsBuilder

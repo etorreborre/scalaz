@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -30,7 +30,7 @@ trait Pointed[F[_]] extends Functor[F] { self =>
   }
 
   ////
-  val pointedSyntax = new scalaz.syntax.PointedSyntax[F] { def F = Pointed.this }
+  val pointedSyntax = new org.specs2.internal.scalaz.syntax.PointedSyntax[F] { def F = Pointed.this }
 }
 
 object Pointed {

@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 /** An algebraic data type representing the characters 'a' to 'z' */
 sealed trait Alpha {

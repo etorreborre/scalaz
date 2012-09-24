@@ -1,7 +1,7 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 
 object IterateeUsage extends App {
-  import scalaz._, Scalaz._, MonadPartialOrder._
+  import org.specs2.internal.scalaz._, Scalaz._, MonadPartialOrder._
   import iteratee._, iteratee.Iteratee, Iteratee._
   import effect._, IO._
 

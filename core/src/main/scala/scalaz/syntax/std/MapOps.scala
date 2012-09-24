@@ -1,8 +1,8 @@
-package scalaz
+package org.specs2.internal.scalaz
 package syntax
 package std
 
-import scalaz.std.{ map => dict }
+import org.specs2.internal.scalaz.std.{ map => dict }
 
 trait MapOps[K, A] extends Ops[Map[K, A]] {
   final def intersectWithKey[B, C](m: Map[K, B])(f: (K, A, B) => C): Map[K, C] = dict.intersectWithKey(self, m)(f)

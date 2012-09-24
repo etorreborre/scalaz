@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package iteratee
 
 import effect._
@@ -233,7 +233,7 @@ trait IterateeTFunctions {
    * An iteratee that consumes all of the input into something that is PlusEmpty and Pointed.
    */
   def consume[E, F[_]: Monad, A[_]: PlusEmpty : Pointed]: IterateeT[E, F, A[E]] = {
-    import scalaz.syntax.plus._
+    import org.specs2.internal.scalaz.syntax.plus._
     def step(e: Input[E]): IterateeT[E, F, A[E]] =
       e.fold(empty = cont(step)
         , el = e => cont(step).map(a => Pointed[A].point(e) <+> a)
@@ -244,7 +244,7 @@ trait IterateeTFunctions {
   }
 
   def collectT[E, F[_], A[_]](implicit M: Monad[F], mae: Monoid[A[E]], pointed: Pointed[A]): IterateeT[E, F, A[E]] = {
-    import scalaz.syntax.semigroup._
+    import org.specs2.internal.scalaz.syntax.semigroup._
     def step(e: Input[E]): IterateeT[E, F, A[E]] =
       e.fold(empty = cont(step)
         , el = e => cont(step).map(a => Pointed[A].point(e) |+| a)

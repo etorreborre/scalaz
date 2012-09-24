@@ -1,7 +1,7 @@
-package scalaz
+package org.specs2.internal.scalaz
 package concurrent
 
-import scalaz.Spec
+import org.specs2.internal.scalaz.Spec
 import std.AllInstances._
 
 class ActorTest extends Spec {

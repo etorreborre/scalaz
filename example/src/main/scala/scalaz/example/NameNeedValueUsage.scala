@@ -1,7 +1,7 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 
 object NameNeedValueUsage extends App {
-  import scalaz._
+  import org.specs2.internal.scalaz._
   
   def undefined = sys.error("!!")
   

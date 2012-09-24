@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -31,7 +31,7 @@ trait Compose[=>:[_, _]]  { self =>
   def composeLaw = new ComposeLaw {}
 
   ////
-  val composeSyntax = new scalaz.syntax.ComposeSyntax[=>:] { def F = Compose.this }
+  val composeSyntax = new org.specs2.internal.scalaz.syntax.ComposeSyntax[=>:] { def F = Compose.this }
 }
 
 object Compose {

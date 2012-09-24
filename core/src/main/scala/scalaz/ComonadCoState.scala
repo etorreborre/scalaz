@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 trait ComonadStore[F[_, _], S] extends Comonad[({type f[x]=F[S,x]})#f] {
   def pos[A](w: F[S, A]): S

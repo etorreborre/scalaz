@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 /**
  * Represents disjunction. Isomorphic to `scala.Either`. Does not have left/right projections, instead right-bias and use `swap` or `swapped`.

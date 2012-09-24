@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 trait MonadState[F[_,_],S] extends Monad[({type f[x]=F[S,x]})#f] {
   def init: F[S,S]

@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 import Id._
 
@@ -16,7 +16,7 @@ import Id._
  *
  * Example:
  * {{{
- * import scalaz._, std.AllInstances._
+ * import org.specs2.internal.scalaz._, std.AllInstances._
  *
  * def parseInt(s: String): Validation[String, Int] =
  *   try { Success(s.toInt) } catch { case ex: NumberFormatException => Failure(ex.getMessage) }

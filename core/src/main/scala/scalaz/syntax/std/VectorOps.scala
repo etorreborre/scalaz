@@ -1,8 +1,8 @@
-package scalaz
+package org.specs2.internal.scalaz
 package syntax
 package std
 
-import scalaz.std.{vector => v}
+import org.specs2.internal.scalaz.std.{vector => v}
 
 trait VectorOps[A] extends Ops[Vector[A]] {
 

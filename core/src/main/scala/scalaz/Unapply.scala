@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 import scala.annotation._
 
@@ -23,7 +23,7 @@ import scala.annotation._
  *
  * // Old usage
  * def stateTraverse1 {
- *   import scalaz._, Scalaz._
+ *   import org.specs2.internal.scalaz._, Scalaz._
  *   import State.{State, stateMonad}
  *   val ls = List(1, 2, 3)
  *   val traverseOpt: Option[List[Int]] = ls.traverse(a => Some(a))
@@ -32,7 +32,7 @@ import scala.annotation._
  *
  * // New usage
  * def stateTraverse2 {
- *   import scalaz._, Scalaz._
+ *   import org.specs2.internal.scalaz._, Scalaz._
  *   val ls = List(1, 2, 3)
  *   val traverseOpt: Option[List[Int]] = ls.traverseI(a => some(a))
  *   val traverseState = ls.traverseI(a => State((x: Int) => (x + 1, a)))
@@ -46,7 +46,7 @@ import scala.annotation._
 """Unable to unapply type `${MA}` into a type constructor of kind `M[_]` that is classified by the type class `${TC}`
 1) Check that the type class is defined by compiling `implicitly[${TC}[<type constructor>]]`.
 2) Review the implicits in object Unapply, which only cover common type 'shapes'
-(implicit not found: scalaz.Unapply[${TC}, ${MA}])""")
+(implicit not found: org.specs2.internal.scalaz.Unapply[${TC}, ${MA}])""")
 trait Unapply[TC[_[_]], MA] {
 
   /** The type constructor */

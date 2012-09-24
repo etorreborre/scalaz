@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 import scalacheck.ScalazArbitrary._
 import scalacheck.ScalazProperties._

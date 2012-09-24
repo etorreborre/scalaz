@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package std
 
 trait TupleInstances0 {
@@ -400,7 +400,7 @@ trait TupleInstances2 extends TupleInstances1 {
 trait TupleInstances extends TupleInstances2
 
 object tuple extends TupleInstances {
-  object tupleSyntax extends scalaz.syntax.std.ToTupleOps
+  object tupleSyntax extends org.specs2.internal.scalaz.syntax.std.ToTupleOps
 }
 
 private[scalaz] trait Tuple1Semigroup[A1] extends Semigroup[Tuple1[A1]] {

@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 sealed trait LazyTuple2[A, B] {
   def _1: A

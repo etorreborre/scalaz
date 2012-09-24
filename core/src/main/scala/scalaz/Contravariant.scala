@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -12,7 +12,7 @@ trait Contravariant[F[_]]  { self =>
   // derived functions
 
   ////
-  val contravariantSyntax = new scalaz.syntax.ContravariantSyntax[F] { def F = Contravariant.this }
+  val contravariantSyntax = new org.specs2.internal.scalaz.syntax.ContravariantSyntax[F] { def F = Contravariant.this }
 }
 
 object Contravariant {

@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -27,7 +27,7 @@ trait PlusEmpty[F[_]] extends Plus[F] { self =>
   def plusEmptyLaw = new EmptyLaw {}
 
   ////
-  val plusEmptySyntax = new scalaz.syntax.PlusEmptySyntax[F] { def F = PlusEmpty.this }
+  val plusEmptySyntax = new org.specs2.internal.scalaz.syntax.PlusEmptySyntax[F] { def F = PlusEmpty.this }
 }
 
 object PlusEmpty {

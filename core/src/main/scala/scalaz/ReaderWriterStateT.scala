@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 sealed trait ReaderWriterStateT[F[+_], -R, +W, S, +A] {
   self =>

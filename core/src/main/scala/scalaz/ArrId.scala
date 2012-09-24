@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -10,7 +10,7 @@ trait ArrId[=>:[_, _]]  { self =>
   def id[A]: A =>: A
 
   ////
-  val arrIdSyntax = new scalaz.syntax.ArrIdSyntax[=>:] { def F = ArrId.this }
+  val arrIdSyntax = new org.specs2.internal.scalaz.syntax.ArrIdSyntax[=>:] { def F = ArrId.this }
 }
 
 object ArrId {

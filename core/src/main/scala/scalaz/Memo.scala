@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 sealed trait Memo[@specialized(Int) K, @specialized(Int, Long, Double) V] {
   def apply(z: K => V): K => V

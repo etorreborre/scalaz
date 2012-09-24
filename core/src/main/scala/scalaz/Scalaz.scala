@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 object Scalaz
   extends StateFunctions        // Functions related to the state monad

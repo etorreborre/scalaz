@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 sealed trait LazyEitherT[F[+_], +A, +B] {
   def run: F[LazyEither[A, B]]

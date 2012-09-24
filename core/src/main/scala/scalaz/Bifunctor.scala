@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -39,7 +39,7 @@ trait Bifunctor[F[_, _]]  { self =>
   def umap[A, B](faa: F[A, A])(f: A => B): F[B, B] =
     bimap(faa)(f, f)
   ////
-  val bifunctorSyntax = new scalaz.syntax.BifunctorSyntax[F] { def F = Bifunctor.this }
+  val bifunctorSyntax = new org.specs2.internal.scalaz.syntax.BifunctorSyntax[F] { def F = Bifunctor.this }
 }
 
 object Bifunctor {

@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 sealed trait Codensity[F[+_], +A] { self =>
   def apply[B](f: A => F[B]): F[B]

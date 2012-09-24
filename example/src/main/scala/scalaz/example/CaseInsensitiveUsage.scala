@@ -1,6 +1,6 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 
-import scalaz.{CaseInsensitive => CI}
+import org.specs2.internal.scalaz.{CaseInsensitive => CI}
 
 object CaseInsensitiveUsage extends App {
 

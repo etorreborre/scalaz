@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 /** A cofree comonad for some functor `S`, i.e. an `S`-branching stream. */
 case class Cofree[S[+_], +A](head: A, tail: S[Cofree[S, A]])(implicit S: Functor[S]) {

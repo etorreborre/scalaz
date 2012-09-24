@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 import collection.Iterator
 import syntax.semigroup._
@@ -1001,7 +1001,7 @@ trait FingerTreeFunctions {
   import collection.generic.CanBuildFrom
 
   trait Ropes {
-    import scalaz.{ImmutableArray => IA}
+    import org.specs2.internal.scalaz.{ImmutableArray => IA}
     import std.anyVal._
 
     /**

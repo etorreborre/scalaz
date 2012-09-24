@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 sealed abstract class Ordering(val toInt: Int, val name: String) {
   def complement: Ordering

@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 /** Representable functors */
 abstract class Representable[F[_], X](implicit val F: Functor[F]) {
@@ -16,7 +16,7 @@ abstract class Representable[F[_], X](implicit val F: Functor[F]) {
 }
 
 trait RepresentableInstances {
-  import scalaz.std.function._
+  import org.specs2.internal.scalaz.std.function._
 
   implicit def readerRepresentable[E]: Representable[({type λ[α] = E => α})#λ, E] =
     new Representable[({type λ[α] = E => α})#λ, E] {

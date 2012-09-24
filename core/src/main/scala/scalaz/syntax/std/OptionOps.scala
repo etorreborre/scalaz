@@ -1,9 +1,9 @@
-package scalaz
+package org.specs2.internal.scalaz
 package syntax
 package std
 
-import scalaz.std.{option => o}
-import scalaz.Tags.{Last, First}
+import org.specs2.internal.scalaz.std.{option => o}
+import org.specs2.internal.scalaz.Tags.{Last, First}
 
 trait OptionOps[A] extends Ops[Option[A]] {
   final def cata[X](some: A => X, none: => X): X = o.cata(self)(some, none)

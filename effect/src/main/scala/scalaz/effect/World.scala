@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package effect
 
 private[effect] case class World[A]()

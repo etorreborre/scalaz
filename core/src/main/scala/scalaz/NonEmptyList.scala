@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 /** A singly-linked list that is guaranteed to be non-empty. */
 sealed trait NonEmptyList[+A] {

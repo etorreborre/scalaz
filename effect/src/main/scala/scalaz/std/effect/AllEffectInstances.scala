@@ -1,4 +1,4 @@
-package scalaz.std.effect
+package org.specs2.internal.scalaz.std.effect
 
 trait AllEffectInstances 
     extends InputStreamInstances

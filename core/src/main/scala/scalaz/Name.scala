@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 /** Call by name */
 sealed abstract class Name[+A] {

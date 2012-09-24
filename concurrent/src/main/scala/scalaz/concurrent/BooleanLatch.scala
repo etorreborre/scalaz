@@ -1,4 +1,4 @@
-package scalaz.concurrent
+package org.specs2.internal.scalaz.concurrent
 
 import java.util.concurrent._
 import locks._

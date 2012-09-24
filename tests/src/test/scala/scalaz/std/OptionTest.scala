@@ -1,9 +1,9 @@
-package scalaz
+package org.specs2.internal.scalaz
 package std
 
 import std.AllInstances._
-import scalaz.scalacheck.ScalazProperties._
-import scalaz.scalacheck.ScalazArbitrary._
+import org.specs2.internal.scalaz.scalacheck.ScalazProperties._
+import org.specs2.internal.scalaz.scalacheck.ScalazArbitrary._
 import Tags._
 import org.scalacheck.Prop._
 

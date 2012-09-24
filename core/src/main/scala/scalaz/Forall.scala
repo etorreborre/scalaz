@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 /** A universally quantified value */
 trait Forall[P[_]] {

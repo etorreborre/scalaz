@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -16,7 +16,7 @@ trait Copointed[F[_]] extends Functor[F] { self =>
   def copure[A](p: F[A]): A = copoint(p)
 
   ////
-  val copointedSyntax = new scalaz.syntax.CopointedSyntax[F] { def F = Copointed.this }
+  val copointedSyntax = new org.specs2.internal.scalaz.syntax.CopointedSyntax[F] { def F = Copointed.this }
 }
 
 object Copointed {

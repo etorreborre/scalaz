@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 /**
  * Liskov substitutability: A better `<:<`

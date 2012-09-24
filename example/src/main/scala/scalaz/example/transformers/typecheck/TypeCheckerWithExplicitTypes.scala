@@ -1,4 +1,4 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 package transformers
 package typecheck
 

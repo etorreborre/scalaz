@@ -1,10 +1,10 @@
-package scalaz
+package org.specs2.internal.scalaz
 package std
 
 import std.nodeseq._
 import syntax.apply._
-import scalaz.scalacheck.ScalazProperties._
-import scalaz.scalacheck.ScalaCheckBinding._
+import org.specs2.internal.scalaz.scalacheck.ScalazProperties._
+import org.specs2.internal.scalaz.scalacheck.ScalaCheckBinding._
 import org.scalacheck.{ Gen, Arbitrary }
 import Id._
 

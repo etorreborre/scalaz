@@ -1,6 +1,6 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 
-import scalaz.UnionTypes._
+import org.specs2.internal.scalaz.UnionTypes._
 
 object UnionUsage {
   

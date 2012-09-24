@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -33,7 +33,7 @@ trait Equal[F]  { self =>
   }
   def equalLaw = new EqualLaw {}
   ////
-  val equalSyntax = new scalaz.syntax.EqualSyntax[F] { def F = Equal.this }
+  val equalSyntax = new org.specs2.internal.scalaz.syntax.EqualSyntax[F] { def F = Equal.this }
 }
 
 object Equal {

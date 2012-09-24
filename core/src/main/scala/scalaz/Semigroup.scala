@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -49,7 +49,7 @@ trait Semigroup[F]  { self =>
 
 
   ////
-  val semigroupSyntax = new scalaz.syntax.SemigroupSyntax[F] { def F = Semigroup.this }
+  val semigroupSyntax = new org.specs2.internal.scalaz.syntax.SemigroupSyntax[F] { def F = Semigroup.this }
 }
 
 object Semigroup {

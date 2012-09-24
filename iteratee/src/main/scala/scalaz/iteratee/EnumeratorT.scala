@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package iteratee
 
 import effect._
@@ -29,7 +29,7 @@ trait EnumeratorT[E, F[_]] { self =>
   }
 
   def bindM[B, G[_]](f: E => G[EnumeratorT[B, F]])(implicit F: Monad[F], G: Monad[G]): F[G[EnumeratorT[B, F]]] = {
-    import scalaz.syntax.semigroup._
+    import org.specs2.internal.scalaz.syntax.semigroup._
     val iter = fold[G[EnumeratorT[B, F]], F, G[EnumeratorT[B, F]]](G.point(EnumeratorT.empty[B, F])) {
       case (acc, concat) => G.bind(acc) { en => 
                               G.map(concat) { append => en |+| append } 

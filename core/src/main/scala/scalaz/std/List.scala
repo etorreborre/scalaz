@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package std
 
 import annotation.tailrec
@@ -224,7 +224,7 @@ trait ListFunctions {
 }
 
 object list extends ListInstances with ListFunctions {
-  object listSyntax extends scalaz.syntax.std.ToListOps
+  object listSyntax extends org.specs2.internal.scalaz.syntax.std.ToListOps
 }
 
 

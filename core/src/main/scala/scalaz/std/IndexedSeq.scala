@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package std
 
 import annotation.tailrec
@@ -197,7 +197,7 @@ trait IndexedSeqSubFunctions extends IndexedSeqSub {
 }
 
 object indexedSeq extends IndexedSeqInstances with IndexedSeqSubFunctions with IndexedSeqSubIndexedSeq {
-  object indexedSeqSyntax extends scalaz.syntax.std.ToIndexedSeqOps
+  object indexedSeqSyntax extends org.specs2.internal.scalaz.syntax.std.ToIndexedSeqOps
 }
 
 trait IndexedSeqEqual[A, Coll <: IndexedSeq[A]] extends Equal[Coll] {

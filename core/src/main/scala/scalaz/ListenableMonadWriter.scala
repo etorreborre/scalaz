@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 trait ListenableMonadWriter[F[_, _], W] extends MonadWriter[F, W] {
   def listen[A](ma: F[W, A]): F[W, (A, W)]
@@ -6,7 +6,7 @@ trait ListenableMonadWriter[F[_, _], W] extends MonadWriter[F, W] {
   def pass[A](ma: F[W, (A, W => W)]): F[W, A] =
     bind(listen(ma)){ case ((a, f), w) => writer(f(w), a) }
 
-  val listenableMonadWriterSyntax = new scalaz.syntax.ListenableMonadWriterSyntax[F, W]{}
+  val listenableMonadWriterSyntax = new org.specs2.internal.scalaz.syntax.ListenableMonadWriterSyntax[F, W]{}
 }
 
 object ListenableMonadWriter {

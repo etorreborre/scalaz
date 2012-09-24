@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -12,7 +12,7 @@ trait Each[F[_]]  { self =>
   // derived functions
 
   ////
-  val eachSyntax = new scalaz.syntax.EachSyntax[F] { def F = Each.this }
+  val eachSyntax = new org.specs2.internal.scalaz.syntax.EachSyntax[F] { def F = Each.this }
 }
 
 object Each {

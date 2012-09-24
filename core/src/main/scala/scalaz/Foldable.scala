@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -204,7 +204,7 @@ trait Foldable[F[_]]  { self =>
   }
 
   ////
-  val foldableSyntax = new scalaz.syntax.FoldableSyntax[F] { def F = Foldable.this }
+  val foldableSyntax = new org.specs2.internal.scalaz.syntax.FoldableSyntax[F] { def F = Foldable.this }
 }
 
 object Foldable {

@@ -1,12 +1,12 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 package xml
 package cursor
 
 object Shifties {
   def main(args: Array[String]) {
 
-    import scalaz._, Scalaz._
-    import scalaz.xml._, cursor._, Xml._
+    import org.specs2.internal.scalaz._, Scalaz._
+    import org.specs2.internal.scalaz.xml._, cursor._, Xml._
 
     // XML Data. Note unbalanced tag and unquoted attribute.
     val xml = """<yo><!-- let's go! --><blib>hello<chook egg=no>tennisball</chook><chook blah='asdf'>toaster</blib></yo>"""

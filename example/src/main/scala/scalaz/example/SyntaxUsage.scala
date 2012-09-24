@@ -1,4 +1,4 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 
 object SyntaxUsage extends App {
 
@@ -16,7 +16,7 @@ object SyntaxUsage extends App {
   // Use the syntax only for Monad[Option]
   // This includes the syntax for the parent type classes.
   def syntax1() {
-    import scalaz._
+    import org.specs2.internal.scalaz._
 
     // Import type class instances for Option, and the
     // Monad syntax for Option.
@@ -33,7 +33,7 @@ object SyntaxUsage extends App {
 
   // Use two different instances, and the syntax for all Monads
   def syntax2() {
-    import scalaz._
+    import org.specs2.internal.scalaz._
 
     // Import type class instances for Option and List
     import std.option._
@@ -50,7 +50,7 @@ object SyntaxUsage extends App {
   }
 
   def syntax3() {
-    import scalaz._
+    import org.specs2.internal.scalaz._
 
     // Import all type class instances
     import Scalaz._
@@ -65,7 +65,7 @@ object SyntaxUsage extends App {
 
   // Monad extends from Pointed, so we can use (std.Option.option: Monad[Option]) where Pointed[F] is called for.
   def useParentTypeClass {
-    import scalaz._
+    import org.specs2.internal.scalaz._
 
     def needPointed[F[_] : Pointed] = ()
 
@@ -74,16 +74,16 @@ object SyntaxUsage extends App {
   }
 
   def stdSyntax() {
-    import scalaz.std.anyVal._
-    import scalaz.std.stream.streamSyntax._
+    import org.specs2.internal.scalaz.std.anyVal._
+    import org.specs2.internal.scalaz.std.stream.streamSyntax._
 
     val merged = Stream(1, 3, 5).merge(Stream(2, 4, 6))
 
-    import scalaz.std.list._
-    import scalaz.std.option._
-    import scalaz.std.option.optionSyntax._
-    import scalaz.syntax.monoid._
-    import scalaz.syntax.equal._
+    import org.specs2.internal.scalaz.std.list._
+    import org.specs2.internal.scalaz.std.option._
+    import org.specs2.internal.scalaz.std.option.optionSyntax._
+    import org.specs2.internal.scalaz.syntax.monoid._
+    import org.specs2.internal.scalaz.syntax.equal._
 
     val lists: List[Int] = some(1).orEmpty[List]
     ((some(1).last |+| some(2).last): Option[Int]) assert_=== some(2)
@@ -92,8 +92,8 @@ object SyntaxUsage extends App {
   def stdSyntaxUeber() {
     // Scalaz 6 Style: import everything: type class instances, implicit conversions
     // to the syntax wrappers, general functions.
-    import scalaz._
-    import scalaz.Scalaz._
+    import org.specs2.internal.scalaz._
+    import org.specs2.internal.scalaz.Scalaz._
 
     // prefix style function call `op(args)`
     orEmpty[Int, List](some(1))

@@ -1,9 +1,9 @@
-package scalaz
+package org.specs2.internal.scalaz
 package typelevel
 
-import scalaz.{Apply, Kleisli}
+import org.specs2.internal.scalaz.{Apply, Kleisli}
 
-import scalaz.Id._
+import org.specs2.internal.scalaz.Id._
 
 object GenericList {
 

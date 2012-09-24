@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -12,7 +12,7 @@ trait Split[=>:[_, _]] extends Category[=>:] { self =>
   // derived functions
 
   ////
-  val splitSyntax = new scalaz.syntax.SplitSyntax[=>:] { def F = Split.this }
+  val splitSyntax = new org.specs2.internal.scalaz.syntax.SplitSyntax[=>:] { def F = Split.this }
 }
 
 object Split {

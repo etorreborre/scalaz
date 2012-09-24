@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 import reflect.ClassManifest
 import collection.mutable.{ArrayBuilder, Builder}
@@ -220,7 +220,7 @@ object ImmutableArray extends ImmutableArrayFunctions {
   }
 
   object WrappedImmutableArray {
-    import scalaz.{ImmutableArray => IA}
+    import org.specs2.internal.scalaz.{ImmutableArray => IA}
     class ofStringArray(val strArray: StringArray) extends WrappedImmutableArray[Char](strArray) {
       override protected[this] def arrayBuilder = (new StringBuilder).mapResult(str => new StringArray(str.toString))
     }

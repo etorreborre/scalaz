@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package std
 
 import annotation.tailrec
@@ -161,5 +161,5 @@ trait StreamFunctions {
 }
 
 object stream extends StreamInstances with StreamFunctions {
-  object streamSyntax extends scalaz.syntax.std.ToStreamOps
+  object streamSyntax extends org.specs2.internal.scalaz.syntax.std.ToStreamOps
 }

@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -238,7 +238,7 @@ trait Enum[F] extends Order[F] { self =>
   def enumLaw = new EnumLaw {}
 
   ////
-  val enumSyntax = new scalaz.syntax.EnumSyntax[F] { def F = Enum.this }
+  val enumSyntax = new org.specs2.internal.scalaz.syntax.EnumSyntax[F] { def F = Enum.this }
 }
 
 object Enum {

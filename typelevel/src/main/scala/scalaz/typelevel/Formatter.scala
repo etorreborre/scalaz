@@ -1,9 +1,9 @@
-package scalaz
+package org.specs2.internal.scalaz
 package typelevel
 
 import java.{lang => jl, util => ju}
 
-import scalaz.syntax.semigroup._
+import org.specs2.internal.scalaz.syntax.semigroup._
 import UnionTypes._
 
 trait Formatter[Params <: HList, R] extends (Params => R) { self =>

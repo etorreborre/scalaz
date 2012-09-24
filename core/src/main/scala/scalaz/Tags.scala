@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 /**
  * Type tags that are used to discriminate between alternative type class instances.

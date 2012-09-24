@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package std
 package math
 
@@ -31,7 +31,7 @@ trait BigInts {
   import Tags.Multiplication
 
   implicit val bigIntMultiplication: Monoid[BigInt @@ Multiplication] with Order[BigInt @@ Multiplication] with Show[BigInt @@ Multiplication] = new Monoid[BigInt @@ Multiplication] with Order[BigInt @@ Multiplication] with Show[BigInt @@ Multiplication] {
-    override def shows(f: scalaz.@@[BigInt, Multiplication]) = f.toString
+    override def shows(f: org.specs2.internal.scalaz.@@[BigInt, Multiplication]) = f.toString
 
     def append(f1: BigInt @@ Multiplication, f2: => BigInt @@ Multiplication): BigInt @@ Multiplication = Multiplication(f1 * f2)
 

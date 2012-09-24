@@ -1,9 +1,9 @@
-package scalaz
+package org.specs2.internal.scalaz
 package typelevel
 
-import scalaz.std.AllInstances._
-import scalaz.scalacheck.ScalazProperties._
-import scalaz.scalacheck.ScalaCheckBinding._
+import org.specs2.internal.scalaz.std.AllInstances._
+import org.specs2.internal.scalaz.scalacheck.ScalazProperties._
+import org.specs2.internal.scalaz.scalacheck.ScalaCheckBinding._
 import org.scalacheck.Arbitrary
 
 import Typelevel._

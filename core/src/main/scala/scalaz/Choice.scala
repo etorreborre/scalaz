@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -15,7 +15,7 @@ trait Choice[=>:[_, _]] extends Category[=>:] { self =>
   def codiagonal[A]: (A \/ A) =>: A = choice(id, id)
 
   ////
-  val choiceSyntax = new scalaz.syntax.ChoiceSyntax[=>:] { def F = Choice.this }
+  val choiceSyntax = new org.specs2.internal.scalaz.syntax.ChoiceSyntax[=>:] { def F = Choice.this }
 }
 
 object Choice {

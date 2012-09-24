@@ -1,8 +1,8 @@
-package scalaz
+package org.specs2.internal.scalaz
 package syntax
 package effect
 
-import scalaz.effect.LiftControlIO
+import org.specs2.internal.scalaz.effect.LiftControlIO
 
 /** Wraps a value `self` and provides methods related to `LiftControlIO` */
 trait LiftControlIOOps[F[_],A] extends Ops[F[A]] {

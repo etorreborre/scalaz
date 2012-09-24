@@ -1,7 +1,7 @@
-package scalaz
+package org.specs2.internal.scalaz
 
-import scalaz.syntax.equal._
-import scalaz.syntax.show._
+import org.specs2.internal.scalaz.syntax.equal._
+import org.specs2.internal.scalaz.syntax.show._
 
 sealed trait Either3[+A, +B, +C] {
   def fold[Z](left: A => Z, middle: B => Z, right: C => Z): Z = this match {

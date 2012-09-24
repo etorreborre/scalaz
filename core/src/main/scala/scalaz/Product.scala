@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 
 private[scalaz] trait ProductFunctor[F[_], G[_]] extends Functor[({type λ[α] = (F[α], G[α])})#λ] {

@@ -1,8 +1,8 @@
-package scalaz
+package org.specs2.internal.scalaz
 package syntax
 package effect
 
-import scalaz.effect.MonadControlIO
+import org.specs2.internal.scalaz.effect.MonadControlIO
 
 /** Wraps a value `self` and provides methods related to `MonadControlIO` */
 trait MonadControlIOOps[F[_],A] extends Ops[F[A]] {

@@ -1,4 +1,4 @@
-package scalaz.syntax
+package org.specs2.internal.scalaz.syntax
 package std
 
 trait OptionIdOps[A] extends Ops[A] {

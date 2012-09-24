@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 // Returns a list in order of key insertion.
 sealed trait InsertionMap[K, V] {

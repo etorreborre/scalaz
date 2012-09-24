@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package scalacheck
 
 import java.math.BigInteger
@@ -58,11 +58,11 @@ object ScalazArbitrary {
   import NonEmptyList._
   implicit def NonEmptyListArbitrary[A: Arbitrary]: Arbitrary[NonEmptyList[A]] = Apply[Arbitrary].apply[A, List[A], NonEmptyList[A]](arb[A], arb[List[A]])(nel(_, _))
 
-  import scalaz.Ordering._
+  import org.specs2.internal.scalaz.Ordering._
   implicit def OrderingArbitrary: Arbitrary[Ordering] = Arbitrary(oneOf(LT, EQ, GT))
 
   implicit def TreeArbitrary[A](implicit a: Arbitrary[A]): Arbitrary[Tree[A]] = Arbitrary {
-  import scalaz.Tree._
+  import org.specs2.internal.scalaz.Tree._
     def tree(n: Int): Gen[Tree[A]] = n match {
       case 0 => arbitrary[A] map (leaf(_))
       case _ => {
@@ -149,8 +149,8 @@ object ScalazArbitrary {
 
   implicit def CallableArbitrary[A](implicit a: Arbitrary[A]): Arbitrary[Callable[A]] = Functor[Arbitrary].map(arb[A])((x: A) => Pointed[Callable].point(x))
 
-  import scalaz.concurrent.Promise
-  import scalaz.concurrent.Promise._
+  import org.specs2.internal.scalaz.concurrent.Promise
+  import org.specs2.internal.scalaz.concurrent.Promise._
 
   implicit def PromiseArbitrary[A](implicit a: Arbitrary[A], s: concurrent.Strategy): Arbitrary[Promise[A]] = Functor[Arbitrary].map(arb[A])((x: A) => Promise(x))
 

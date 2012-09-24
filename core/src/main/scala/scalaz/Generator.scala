@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 /**
  * A `Generator[C]` is a container of elements, and which knows how to efficiently apply a [[scalaz.Reducer]]

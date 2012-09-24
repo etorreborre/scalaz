@@ -1,6 +1,6 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 
-import scalaz._
+import org.specs2.internal.scalaz._
 
 object StateTUsage extends App {
   import StateT._
@@ -28,10 +28,10 @@ object StateTUsage extends App {
 }
 
 object FibStateExample extends App {
-  val S = scalaz.StateT.stateMonad[(Int, Int)]
+  val S = org.specs2.internal.scalaz.StateT.stateMonad[(Int, Int)]
   import S.monadSyntax._
-  import scalaz.State._
-  import scalaz.std.list._
+  import org.specs2.internal.scalaz.State._
+  import org.specs2.internal.scalaz.std.list._
 
   val initialState = (0, 1)
 
@@ -67,17 +67,17 @@ object FibStateExample extends App {
   */
 object LaunchburyInterpreter extends App {
   import scala.collection.immutable.HashMap
-  import scalaz.StreamT._
-  import scalaz.std.function._
-  import scalaz.std.list._
-  import scalaz.std.map._
-  import scalaz.syntax.foldable._
-  import scalaz.syntax.traverse._
-  import scalaz.syntax.arrow._
+  import org.specs2.internal.scalaz.StreamT._
+  import org.specs2.internal.scalaz.std.function._
+  import org.specs2.internal.scalaz.std.list._
+  import org.specs2.internal.scalaz.std.map._
+  import org.specs2.internal.scalaz.syntax.foldable._
+  import org.specs2.internal.scalaz.syntax.traverse._
+  import org.specs2.internal.scalaz.syntax.arrow._
 
-  val S = scalaz.StateT.stateMonad[ReduceState]
+  val S = org.specs2.internal.scalaz.StateT.stateMonad[ReduceState]
   import S.monadSyntax._
-  import scalaz.State._
+  import org.specs2.internal.scalaz.State._
 
   /** Simple lambda calculus Abstract Syntax Tree.
     * Note that that apply applies a let-bound argument to an Expr.

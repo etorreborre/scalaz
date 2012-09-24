@@ -1,8 +1,8 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 import std.AllInstances._
-import scalaz.scalacheck.ScalazProperties._
-import scalaz.scalacheck.ScalazArbitrary._
+import org.specs2.internal.scalaz.scalacheck.ScalazProperties._
+import org.specs2.internal.scalaz.scalacheck.ScalazArbitrary._
 import Id._
 
 class IdTest extends Spec {

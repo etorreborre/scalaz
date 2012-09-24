@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 trait MonadReader[F[_,_],S] extends Monad[({type f[x]=F[S,x]})#f] {
   def ask: F[S,S]

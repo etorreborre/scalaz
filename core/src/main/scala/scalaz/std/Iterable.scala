@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package std
 
 trait IterableInstances {
@@ -10,7 +10,7 @@ trait IterableInstances {
   /** Lexicographical ordering */
   implicit def iterableOrder[A](implicit A: Order[A]): Order[Iterable[A]] = new Order[Iterable[A]] {
     def order(a1: Iterable[A], a2: Iterable[A]): Ordering = {
-      import scalaz.Ordering._
+      import org.specs2.internal.scalaz.Ordering._
       val i1 = a1.iterator
       val i2 = a2.iterator
 

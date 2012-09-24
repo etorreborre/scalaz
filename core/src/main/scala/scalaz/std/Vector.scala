@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package std
 
 trait IndexedSeqSubVector extends IndexedSeqSub {
@@ -27,5 +27,5 @@ trait VectorInstances extends VectorInstances0 {
 }
 
 object vector extends IndexedSeqSubVector with VectorInstances with IndexedSeqSubFunctions {
-  object vectorSyntax extends scalaz.syntax.std.ToVectorOps
+  object vectorSyntax extends org.specs2.internal.scalaz.syntax.std.ToVectorOps
 }

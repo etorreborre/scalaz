@@ -1,6 +1,6 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 
-import scalaz._
+import org.specs2.internal.scalaz._
 import Scalaz._
 import typelevel._
 

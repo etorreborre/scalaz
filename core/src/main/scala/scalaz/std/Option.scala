@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package std
 
 trait OptionInstances0 {
@@ -199,13 +199,13 @@ trait OptionFunctions {
    * Returns the given value if None, otherwise lifts the Some value to Option and passes it to the given function.
    */
   final def foldLiftOpt[A, B](oa: Option[A])(b: => B, k: Option[A] => B): B = {
-    import scalaz.std.option.optionInstance
+    import org.specs2.internal.scalaz.std.option.optionInstance
     foldLift[Option, A, B](oa)(b, k)
   }
 }
 
 object option extends OptionInstances with OptionFunctions {
-  object optionSyntax extends scalaz.syntax.std.ToOptionOps with scalaz.syntax.std.ToOptionIdOps
+  object optionSyntax extends org.specs2.internal.scalaz.syntax.std.ToOptionOps with org.specs2.internal.scalaz.syntax.std.ToOptionIdOps
 }
 
 //

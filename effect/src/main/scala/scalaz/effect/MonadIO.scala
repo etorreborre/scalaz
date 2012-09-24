@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package effect
 
 ////
@@ -12,7 +12,7 @@ trait MonadIO[F[_]] extends LiftIO[F] with Monad[F] { self =>
   // derived functions
 
   ////
-  val monadIOSyntax = new scalaz.syntax.effect.MonadIOSyntax[F] { def F = MonadIO.this }
+  val monadIOSyntax = new org.specs2.internal.scalaz.syntax.effect.MonadIOSyntax[F] { def F = MonadIO.this }
 }
 
 object MonadIO {

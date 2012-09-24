@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -13,7 +13,7 @@ trait Cojoin[F[_]]  { self =>
   // derived functions
 
   ////
-  val cojoinSyntax = new scalaz.syntax.CojoinSyntax[F] { def F = Cojoin.this }
+  val cojoinSyntax = new org.specs2.internal.scalaz.syntax.CojoinSyntax[F] { def F = Cojoin.this }
 }
 
 object Cojoin {

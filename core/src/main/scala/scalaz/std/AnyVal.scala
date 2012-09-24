@@ -1,7 +1,7 @@
-package scalaz
+package org.specs2.internal.scalaz
 package std
 
-import scalaz._
+import org.specs2.internal.scalaz._
 import Id._
 
 trait AnyValInstances {

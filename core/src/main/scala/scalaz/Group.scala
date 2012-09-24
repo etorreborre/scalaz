@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -25,7 +25,7 @@ trait Group[F] extends Monoid[F] { self =>
   }
   def groupLaw = new GroupLaw {}
   ////
-  val groupSyntax = new scalaz.syntax.GroupSyntax[F] { def F = Group.this }
+  val groupSyntax = new org.specs2.internal.scalaz.syntax.GroupSyntax[F] { def F = Group.this }
 }
 
 object Group {

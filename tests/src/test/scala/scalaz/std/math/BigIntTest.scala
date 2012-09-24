@@ -1,10 +1,10 @@
-package scalaz
+package org.specs2.internal.scalaz
 package std
 package math
 
 import std.AllInstances._
-import scalaz.scalacheck.ScalazProperties._
-import scalaz.scalacheck.ScalazArbitrary._
+import org.specs2.internal.scalaz.scalacheck.ScalazProperties._
+import org.specs2.internal.scalaz.scalacheck.ScalazArbitrary._
 import Tags._
 
 class BigIntTest extends Spec {

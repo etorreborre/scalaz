@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package undo
 
 case class History[S](current: S, undos: List[S] = Nil, redos: List[S] = Nil)

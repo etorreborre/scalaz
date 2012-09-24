@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 /** Given Injective[Foo]: If type Foo[A] = Foo[B] then A ~ B
   *

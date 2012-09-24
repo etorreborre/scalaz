@@ -1,8 +1,8 @@
-package scalaz
+package org.specs2.internal.scalaz
 package syntax
 package std
 
-import scalaz.std.{list => l}
+import org.specs2.internal.scalaz.std.{list => l}
 
 
 trait ListOps[A] extends Ops[List[A]] {

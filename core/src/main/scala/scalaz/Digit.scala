@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 /**An algebraic data type representing the digits 0 - 9 */
 sealed trait Digit {

@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 import Free._
 import std.function._

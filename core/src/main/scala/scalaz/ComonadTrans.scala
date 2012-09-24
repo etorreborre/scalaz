@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 trait ComonadTrans[F[_[_], _]] {
   def lower[G[_]: Cobind, A](a: F[G, A]): G[A]

@@ -1,8 +1,8 @@
-package scalaz
+package org.specs2.internal.scalaz
 package syntax
 package std
 
-import scalaz.std.{indexedSeq => v}
+import org.specs2.internal.scalaz.std.{indexedSeq => v}
 
 trait IndexedSeqOps[A] extends Ops[IndexedSeq[A]] {
 

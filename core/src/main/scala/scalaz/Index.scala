@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -21,7 +21,7 @@ trait Index[F[_]]  { self =>
   // derived functions
 
   ////
-  val indexSyntax = new scalaz.syntax.IndexSyntax[F] { def F = Index.this }
+  val indexSyntax = new org.specs2.internal.scalaz.syntax.IndexSyntax[F] { def F = Index.this }
 }
 
 object Index {

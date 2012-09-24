@@ -1,9 +1,9 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 
-import scalaz.Id._
+import org.specs2.internal.scalaz.Id._
 
 class TraverseUsage {
-  import scalaz._
+  import org.specs2.internal.scalaz._
 
   // type class instances
   import std.list._

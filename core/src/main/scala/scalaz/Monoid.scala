@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -60,7 +60,7 @@ trait Monoid[F] extends Semigroup[F] { self =>
   def monoidLaw = new MonoidLaw {}
 
   ////
-  val monoidSyntax = new scalaz.syntax.MonoidSyntax[F] { def F = Monoid.this }
+  val monoidSyntax = new org.specs2.internal.scalaz.syntax.MonoidSyntax[F] { def F = Monoid.this }
 }
 
 object Monoid {

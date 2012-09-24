@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 final case class IdT[F[_], A](run: F[A]) {
   def map[B](f: A => B)(implicit F: Functor[F]) = new IdT[F, B](

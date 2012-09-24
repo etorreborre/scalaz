@@ -1,8 +1,8 @@
-package scalaz
+package org.specs2.internal.scalaz
 package example
 package concurrent
 
-import scalaz._
+import org.specs2.internal.scalaz._
 import effect._
 import IO._
 import concurrent._

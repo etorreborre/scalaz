@@ -1,6 +1,6 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 
-import scalaz.{Monoid, StateT, Applicative}
+import org.specs2.internal.scalaz.{Monoid, StateT, Applicative}
 
 
 /**
@@ -14,11 +14,11 @@ object WordCount {
   }
 
   def wordCount {
-    import scalaz.State
+    import org.specs2.internal.scalaz.State
 
     val text = "the cat in the hat\n sat on the mat\n".toList
 
-    import scalaz.std.anyVal._, scalaz.std.list._, scalaz.std.boolean.test, scalaz.std.int.heaviside
+    import org.specs2.internal.scalaz.std.anyVal._, org.specs2.internal.scalaz.std.list._, org.specs2.internal.scalaz.std.boolean.test, org.specs2.internal.scalaz.std.int.heaviside
 
     // To count words, we need to detect transitions from whitespace to non-whitespace.
     // atWordStart_{i} = heaviside( test(isSpace(c_{i}) - test(isSpace(c_{i-1})) )

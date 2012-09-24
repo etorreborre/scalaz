@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 /** Mixed into object `Id` in the package object [[scalaz]]. */
 trait IdInstances {

@@ -1,7 +1,7 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 
 object EnumUsage extends App {
-  import scalaz._, Scalaz._, Digit._
+  import org.specs2.internal.scalaz._, Scalaz._, Digit._
 
   assert(!true.succ)
   assert(false.succ)

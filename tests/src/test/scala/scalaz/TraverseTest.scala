@@ -1,11 +1,11 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 import scalacheck.ScalazProperties
 
 class TraverseTest extends Spec {
 
-  import scalaz._
-  import scalaz.State._
+  import org.specs2.internal.scalaz._
+  import org.specs2.internal.scalaz.State._
   import std.AllInstances._
   import std.AllFunctions._
   import syntax.traverse._
@@ -63,7 +63,7 @@ class TraverseTest extends Spec {
   "combos" should {
     "traverse large stream over trampolined StateT including IO" in {
       // Example usage from Eric Torreborre
-      import scalaz.effect._
+      import org.specs2.internal.scalaz.effect._
 
       val as = Stream.range(0, 100000)
       val state: State[Int, IO[Stream[Int]]] = as.traverseSTrampoline(a => for {

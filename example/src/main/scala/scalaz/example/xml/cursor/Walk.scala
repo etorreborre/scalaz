@@ -1,11 +1,11 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 package xml
 package cursor
 
 object Walk {
   def main(args: Array[String]) {
 
-    import scalaz.xml._, cursor._, Xml._
+    import org.specs2.internal.scalaz.xml._, cursor._, Xml._
 
     // XML document
     val xml =

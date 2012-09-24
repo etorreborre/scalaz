@@ -1,15 +1,15 @@
-package scalaz.std
+package org.specs2.internal.scalaz.std
 
 trait AllInstances
   extends AnyValInstances with FunctionInstances with ListInstances with MapInstances
   with OptionInstances with SetInstances with StringInstances with StreamInstances with TupleInstances
   with EitherInstances with PartialFunctionInstances with TypeConstraintInstances
-  with scalaz.std.math.BigDecimalInstances with scalaz.std.math.BigInts
-  with scalaz.std.math.OrderingInstances
-  with scalaz.std.util.parsing.combinator.Parsers
-  with scalaz.std.java.util.MapInstances
-  with scalaz.std.java.math.BigIntegerInstances
-  with scalaz.std.java.util.concurrent.CallableInstances
+  with org.specs2.internal.scalaz.std.math.BigDecimalInstances with org.specs2.internal.scalaz.std.math.BigInts
+  with org.specs2.internal.scalaz.std.math.OrderingInstances
+  with org.specs2.internal.scalaz.std.util.parsing.combinator.Parsers
+  with org.specs2.internal.scalaz.std.java.util.MapInstances
+  with org.specs2.internal.scalaz.std.java.math.BigIntegerInstances
+  with org.specs2.internal.scalaz.std.java.util.concurrent.CallableInstances
   with NodeSeqInstances
   // Intentionally omitted: IterableInstances
 

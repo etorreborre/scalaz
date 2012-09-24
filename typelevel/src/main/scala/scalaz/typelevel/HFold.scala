@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package typelevel
 
 trait HFold[M[_], U] {

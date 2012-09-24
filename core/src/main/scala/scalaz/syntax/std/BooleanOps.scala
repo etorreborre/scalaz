@@ -1,10 +1,10 @@
-package scalaz
+package org.specs2.internal.scalaz
 package syntax
 package std
 
-import scalaz.std.{boolean => b}
-import scalaz.std.anyVal._
-import scalaz.Tags.{ Conjunction, Disjunction }
+import org.specs2.internal.scalaz.std.{boolean => b}
+import org.specs2.internal.scalaz.std.anyVal._
+import org.specs2.internal.scalaz.Tags.{ Conjunction, Disjunction }
 
 
 trait BooleanOps extends Ops[Boolean] {

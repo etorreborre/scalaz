@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -26,7 +26,7 @@ trait Cozip[F[_]]  { self =>
     cozip(x).map(cozip(_) map (cozip(_) map (cozip(_) map (cozip(_) map(cozip(_))))))
 
   ////
-  val cozipSyntax = new scalaz.syntax.CozipSyntax[F] { def F = Cozip.this }
+  val cozipSyntax = new org.specs2.internal.scalaz.syntax.CozipSyntax[F] { def F = Cozip.this }
 }
 
 object Cozip {

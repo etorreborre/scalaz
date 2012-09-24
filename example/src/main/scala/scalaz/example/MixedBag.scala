@@ -1,6 +1,6 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 
-import scalaz._
+import org.specs2.internal.scalaz._
 
 object MixedBag extends App {
   monoid()
@@ -103,7 +103,7 @@ object MixedBag extends App {
   }
 
   def zipper() {
-    import scalaz.std.list
+    import org.specs2.internal.scalaz.std.list
 
     val fileName = "abc.txt"
 

@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 /** Endomorphisms.  They have special properties among functions, so
   * are captured in this newtype. */

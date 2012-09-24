@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -48,7 +48,7 @@ trait Bifoldable[F[_, _]]  { self =>
     bifoldLeft(fa, z)(Function.uncurried(f))(Function.uncurried(g))
 
   ////
-  val bifoldableSyntax = new scalaz.syntax.BifoldableSyntax[F] { def F = Bifoldable.this }
+  val bifoldableSyntax = new org.specs2.internal.scalaz.syntax.BifoldableSyntax[F] { def F = Bifoldable.this }
 }
 
 object Bifoldable {

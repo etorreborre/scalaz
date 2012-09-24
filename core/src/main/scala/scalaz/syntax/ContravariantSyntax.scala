@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package syntax
 
 /** Wraps a value `self` and provides methods related to `Contravariant` */

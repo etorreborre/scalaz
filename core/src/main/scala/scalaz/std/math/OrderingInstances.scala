@@ -1,9 +1,9 @@
-package scalaz
+package org.specs2.internal.scalaz
 package std
 package math
 
 import scala.math.{Ordering => SOrdering}
-import scalaz.Ordering
+import org.specs2.internal.scalaz.Ordering
 
 
 trait OrderingInstances {
@@ -21,7 +21,7 @@ trait OrderingInstances {
 }
 
 trait OrderingFunctions {
-  final def ToScalazOrderFromOrdering[A](oa: SOrdering[A]): scalaz.Order[A] = new scalaz.Order[A] {
+  final def ToScalazOrderFromOrdering[A](oa: SOrdering[A]): org.specs2.internal.scalaz.Order[A] = new org.specs2.internal.scalaz.Order[A] {
     def order(x: A, y: A): Ordering = Ordering.fromInt(oa.compare(x, y))
   }
 }

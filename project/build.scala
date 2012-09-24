@@ -88,8 +88,6 @@ object build extends Build {
         }
         </developers>
       )
-  ) ++ osgiSettings ++ Seq[Sett](
-    OsgiKeys.additionalHeaders := Map("-removeheaders" -> "Include-Resource,Private-Package")
   )
 
   lazy val specs2_scalaz = Project(
@@ -303,7 +301,7 @@ object build extends Build {
       (pimp, conv)
     }
 
-    val source = "package scalaz\npackage syntax\npackage std\n\n" +
+    val source = "package org.specs2.internal.scalaz\npackage syntax\npackage std\n\n" +
       tuples.map(_._1).mkString("\n") +
       "\n\ntrait ToTupleOps {\n" +
          tuples.map("  " + _._2).mkString("\n") +

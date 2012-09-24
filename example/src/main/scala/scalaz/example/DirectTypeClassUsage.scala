@@ -1,6 +1,6 @@
-package scalaz.example
+package org.specs2.internal.scalaz.example
 
-import scalaz.Semigroup
+import org.specs2.internal.scalaz.Semigroup
 
 
 object DirectTypeClassUsage extends App {
@@ -15,7 +15,7 @@ object DirectTypeClassUsage extends App {
 
   // Direct use of type class for one type, Option
   def direct1() {
-    import scalaz._
+    import org.specs2.internal.scalaz._
 
     // Import the members of the type class instance for Option.
     import std.option.optionInstance.{join, bind}
@@ -27,7 +27,7 @@ object DirectTypeClassUsage extends App {
 
   // Direct use of type class for multiple types
   def direct2() {
-    import scalaz._
+    import org.specs2.internal.scalaz._
 
     // Import the type class instances for Option and List.
     import std.option.{optionInstance, optionMonoid}

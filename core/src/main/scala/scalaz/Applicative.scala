@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -73,7 +73,7 @@ trait Applicative[F[_]] extends Apply[F] with Pointed[F] { self =>
   def applicativeLaw = new ApplicativeLaw {}
 
   ////
-  val applicativeSyntax = new scalaz.syntax.ApplicativeSyntax[F] { def F = Applicative.this }
+  val applicativeSyntax = new org.specs2.internal.scalaz.syntax.ApplicativeSyntax[F] { def F = Applicative.this }
 }
 
 object Applicative {

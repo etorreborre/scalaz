@@ -1,8 +1,8 @@
-package scalaz
+package org.specs2.internal.scalaz
 
-import scalaz.scalacheck.ScalazProperties._
-import scalaz.scalacheck.ScalazArbitrary
-import scalaz.scalacheck.ScalazArbitrary.{stateTArb => _, _}
+import org.specs2.internal.scalaz.scalacheck.ScalazProperties._
+import org.specs2.internal.scalaz.scalacheck.ScalazArbitrary
+import org.specs2.internal.scalaz.scalacheck.ScalazArbitrary.{stateTArb => _, _}
 import std.AllInstances._
 
 class LevenshteinTest extends Spec {

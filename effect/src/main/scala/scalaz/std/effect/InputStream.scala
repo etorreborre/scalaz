@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 package std.effect
 
 import effect.{IO, Resource}

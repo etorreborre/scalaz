@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 import collection.immutable.IntMap
 import annotation.tailrec

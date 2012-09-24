@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 package object undo {
   type StateTHistory[F[+_], S, A] = StateT[F, History[S], A]

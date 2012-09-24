@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -122,7 +122,7 @@ trait Apply[F[_]] extends Functor[F] { self =>
     apply(_, _, _, _, _, _, _, _, _, _, _, _)(f)
 
   ////
-  val applySyntax = new scalaz.syntax.ApplySyntax[F] { def F = Apply.this }
+  val applySyntax = new org.specs2.internal.scalaz.syntax.ApplySyntax[F] { def F = Apply.this }
 }
 
 object Apply {

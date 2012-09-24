@@ -1,4 +1,4 @@
-package scalaz
+package org.specs2.internal.scalaz
 
 ////
 /**
@@ -30,7 +30,7 @@ trait MonadPlus[F[_]] extends Monad[F] with ApplicativePlus[F] { self =>
   def monadPlusLaw = new MonadPlusLaw {}
   def strongMonadPlusLaw = new StrongMonadPlusLaw {}
   ////
-  val monadPlusSyntax = new scalaz.syntax.MonadPlusSyntax[F] { def F = MonadPlus.this }
+  val monadPlusSyntax = new org.specs2.internal.scalaz.syntax.MonadPlusSyntax[F] { def F = MonadPlus.this }
 }
 
 object MonadPlus {
