@@ -9,10 +9,12 @@ import com.typesafe.sbtosgi.OsgiPlugin._
 object build extends Build {
   type Sett = Project.Setting[_]
 
-  lazy val standardSettings: Seq[Sett] = Defaults.defaultSettings ++ sbtrelease.ReleasePlugin.releaseSettings ++ Seq[Sett](
+  lazy val standardSettings: Seq[Sett] = Defaults.defaultSettings ++ Seq[Sett](
     organization := "org.specs2",
     scalaVersion := "2.10.0-M7",
+    version      := "7.0-SNAPSHOT",
     crossVersion := CrossVersion.full,
+    name         := "scalaz",
     resolvers += "Sonatype Releases" at "https://oss.sonatype.org/content/repositories/releases",
     scalacOptions <++= (scalaVersion).map((sv: String) => Seq("-deprecation", "-unchecked") ++ (if(sv.contains("2.10")) None else Some("-Ydependent-method-types"))),
     scalacOptions in (Compile, doc) <++= (baseDirectory in LocalProject("scalaz")).map {
@@ -22,75 +24,52 @@ object build extends Build {
 
     genTypeClasses <<= (scalaSource in Compile, streams, typeClasses) map {
       (scalaSource, streams, typeClasses) =>
-        typeClasses.flatMap {
-          tc =>
-            val typeClassSource0 = typeclassSource(tc)
-            typeClassSource0.sources.map(_.createOrUpdate(scalaSource, streams.log))
-        }
+        typeClasses.flatMap { tc => typeclassSource(tc).sources.map(_.createOrUpdate(scalaSource, streams.log)) }
     },
     typeClasses := Seq(),
-    genToSyntax <<= typeClasses map {
-      (tcs: Seq[TypeClass]) =>
+    genToSyntax <<= typeClasses map { tcs: Seq[TypeClass] =>
       val objects = tcs.map(tc => "object %s extends To%sSyntax".format(Util.initLower(tc.name), tc.name)).mkString("\n")
       val all = "object all extends " + tcs.map(tc => "To%sSyntax".format(tc.name)).mkString(" with ")
       objects + "\n\n" + all
     },
-    typeClassTree <<= typeClasses map {
-      tcs => tcs.map(_.doc).mkString("\n")
-    },
+    typeClassTree <<= typeClasses map { _.map(_.doc).mkString("\n") },
 
     showDoc in Compile <<= (doc in Compile, target in doc in Compile) map { (_, out) =>
       val index = out / "index.html"
       if (index.exists()) Desktop.getDesktop.open(out / "index.html")
     },
-    credentialsSetting,
-    // useGpg := false,
-    // useGpgAgent := false,
-    publishSetting,
-    publishArtifact in Test := false,
-    pomIncludeRepository := {
-      x => false
+    credentials += Credentials("Sonatype Nexus Repository Manager", "oss.sonatype.org", "etorreborre", "kela22"), //Path.userHome / ".ivy2" / ".credentials"),
+    publishTo <<= version { v: String =>
+      val nexus = "https://oss.sonatype.org/"
+      if (v.trim.endsWith("SNAPSHOT")) Some("sonatype-snapshots" at nexus + "content/repositories/snapshots")
+      else                             Some("sonatype-staging" at nexus   + "service/local/staging/deploy/maven2")
     },
+    publishMavenStyle := true,
+    publishArtifact in Test := false,
+    pomIncludeRepository := { x => false },
     pomExtra := (
-      <url>http://scalaz.org</url>
-        <licenses>
-          <license>
-            <name>BSD-style</name>
-            <url>http://www.opensource.org/licenses/bsd-license.php</url>
-            <distribution>repo</distribution>
-          </license>
-        </licenses>
-        <scm>
-          <url>git@github.com:scalaz/scalaz.git</url>
-          <connection>scm:git:git@github.com:scalaz/scalaz.git</connection>
-        </scm>
-        <developers>
-          {
-          Seq(
-            ("runarorama", "Runar Bjarnason"),
-            ("pchiusano", "Paul Chiusano"),
-            ("tonymorris", "Tony Morris"),
-            ("retronym", "Jason Zaugg"),
-            ("ekmett", "Edward Kmett"),
-            ("alexeyr", "Alexey Romanov"),
-            ("copumpkin", "Daniel Peebles"),
-            ("rwallace", "Richard Wallace"),
-            ("nuttycom", "Kris Nuttycombe"),
-            ("larsrh", "Lars Hupel")
-          ).map {
-            case (id, name) =>
-              <developer>
-                <id>{id}</id>
-                <name>{name}</name>
-                <url>http://github.com/{id}</url>
-              </developer>
-          }
-        }
-        </developers>
-      )
-  )
+      <url>http://specs2.org/</url>
+  <licenses>
+    <license>
+      <name>MIT-style</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>http://github.com/etorreborre/specs2</url>
+    <connection>scm:http:http://etorreborre@github.com/etorreborre/specs2.git</connection>
+  </scm>
+  <developers>
+    <developer>
+      <id>etorreborre</id>
+      <name>Eric Torreborre</name>
+      <url>http://etorreborre.blogspot.com/</url>
+      </developer>
+    </developers>
+))
 
-  lazy val specs2_scalaz = Project(
+  lazy val `specs2-scalaz` = Project(
     id = "specs2-scalaz",
     base = file("."),
     settings = standardSettings ++ Unidoc.settings,
@@ -109,12 +88,12 @@ object build extends Build {
     base = file("core"),
     settings = standardSettings ++ Seq[Sett](
       name := "scalaz-core",
+      organization := "org.specs2",
       typeClasses := TypeClass.core,
+      credentials += Credentials("Sonatype Nexus Repository Manager", "oss.sonatype.org", "etorreborre", "kela22"), //Path.userHome / ".ivy2" / ".credentials"),
       (sourceGenerators in Compile) <+= (sourceManaged in Compile) map {
         dir => Seq(generateTupleW(dir))
-      },
-      osgiExport("scalaz"),
-      OsgiKeys.importPackage := Seq("javax.swing;resolution:=optional", "*")
+      }
     )
   )
 
@@ -123,9 +102,7 @@ object build extends Build {
     base = file("concurrent"),
     settings = standardSettings ++ Seq[Sett](
       name := "scalaz-concurrent",
-      typeClasses := TypeClass.concurrent,
-      osgiExport("scalaz.concurrent"),
-      OsgiKeys.importPackage := Seq("javax.swing;resolution:=optional", "*")
+      typeClasses := TypeClass.concurrent
     ),
     dependencies = Seq(core, effect)
   )
@@ -135,8 +112,7 @@ object build extends Build {
     base = file("effect"),
     settings = standardSettings ++ Seq[Sett](
       name := "scalaz-effect",
-      typeClasses := TypeClass.effect,
-      osgiExport("scalaz.effect", "scalaz.std.sffect", "scalaz.syntax.effect")
+      typeClasses := TypeClass.effect
     ),
     dependencies = Seq(core)
   )
@@ -145,8 +121,7 @@ object build extends Build {
     id = "iteratee",
     base = file("iteratee"),
     settings = standardSettings ++ Seq[Sett](
-      name := "scalaz-iteratee",
-      osgiExport("scalaz.iteratee")
+      name := "scalaz-iteratee"
     ),
     dependencies = Seq(effect)
   )
@@ -155,8 +130,7 @@ object build extends Build {
     id = "iterv",
     base = file("iterv"),
     settings = standardSettings ++ Seq[Sett](
-      name := "scalaz-iterv",
-      OsgiKeys.fragmentHost := Some("org.scalaz.core")
+      name := "scalaz-iterv"
     ),
     dependencies = Seq(effect)
   )
@@ -165,8 +139,7 @@ object build extends Build {
     id = "typelevel",
     base = file("typelevel"),
     settings = standardSettings ++ Seq[Sett](
-      name := "scalaz-typelevel",
-      osgiExport("scalaz.typelevel")
+      name := "scalaz-typelevel"
     ),
     dependencies = Seq(core)
   )
@@ -176,8 +149,7 @@ object build extends Build {
     base = file("xml"),
     settings = standardSettings ++ Seq[Sett](
       name := "scalaz-xml",
-      typeClasses := TypeClass.xml,
-      osgiExport("scalaz.xml")
+      typeClasses := TypeClass.xml
     ),
     dependencies = Seq(core)
   )
@@ -187,8 +159,7 @@ object build extends Build {
     base = file("example"),
     dependencies = Seq(core, iteratee, concurrent, typelevel, xml),
     settings = standardSettings ++ Seq[Sett](
-      name := "scalaz-example",
-      osgiExport("scalaz.example")
+      name := "scalaz-example"
     )
   )
 
@@ -198,8 +169,7 @@ object build extends Build {
     dependencies = Seq(core, concurrent, typelevel),
     settings     = standardSettings ++ Seq[Sett](
       name := "scalaz-scalacheck-binding",
-      libraryDependencies += "org.scalacheck" %% "scalacheck" % "1.10.0" cross CrossVersion.full,
-      osgiExport("scalaz.scalacheck")
+      libraryDependencies += "org.scalacheck" %% "scalacheck" % "1.10.0" cross CrossVersion.full
     )
   )
 
@@ -220,16 +190,18 @@ object build extends Build {
     v =>
       val nexus = "https://oss.sonatype.org/"
       if (v.trim.endsWith("SNAPSHOT"))
-        Some("snapshots" at nexus + "content/repositories/snapshots")
+        Some("sonatype-snapshots" at nexus + "content/repositories/snapshots")
       else
-        Some("releases" at nexus + "service/local/staging/deploy/maven2")
+        Some("sonatype-staging" at nexus + "service/local/staging/deploy/maven2")
   }
 
   lazy val credentialsSetting = credentials += {
     Seq("build.publish.user", "build.publish.password").map(k => Option(System.getProperty(k))) match {
-      case Seq(Some(user), Some(pass)) =>
+      case Seq(Some(user), Some(pass)) => 
+        println("credentials are "+(user, pass))
         Credentials("Sonatype Nexus Repository Manager", "oss.sonatype.org", user, pass)
       case _                           =>
+        println("no credentials given. Pass the build.publish.user and build.publish.password system properties or use the ~/.ivy2/.credentials file")
         Credentials(Path.userHome / ".ivy2" / ".credentials")
     }
   }
