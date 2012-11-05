@@ -1,8 +1,8 @@
-package org.specs2.internal.sscalaz
+package org.specs2.internal.scalaz
 package syntax
 package std
 
-import org.specs2.internal.sscalaz.std.{ map => dict }
+import org.specs2.internal.scalaz.std.{ map => dict }
 
 trait MapOps[K, A] extends Ops[Map[K, A]] {
   final def alter(k: K)(f: (Option[A] => Option [A])): Map[K, A] = dict.alter(self, k)(f)

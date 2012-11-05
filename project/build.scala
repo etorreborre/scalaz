@@ -170,7 +170,7 @@ object build extends Build {
     dependencies = Seq(core, concurrent, typelevel),
     settings     = standardSettings ++ Seq[Sett](
       name := "scalaz-scalacheck-binding",
-      libraryDependencies += "org.scalacheck" % "scalacheck_2.10.0-RC1" % "1.10.0" cross CrossVersion.full
+      libraryDependencies += "org.scalacheck" % "scalacheck_2.10.0-RC1" % "1.10.0"
     )
   )
 
@@ -181,8 +181,8 @@ object build extends Build {
     settings = standardSettings ++Seq[Sett](
       name := "scalaz-tests",
       libraryDependencies ++= Seq(
-        "org.specs2" % "specs2" % "1.12.1.1_2.10.0-M7" % "test" cross CrossVersion.full,
-        "org.scalacheck" % "scalacheck_2.10.0-M7" % "1.10.0" % "test" cross CrossVersion.full
+        "org.specs2" % "specs2_2.10.0-RC1" % "1.12.2" % "test",
+        "org.scalacheck" % "scalacheck_2.10.0-RC1" % "1.10.0" % "test"
       )
     )
   )

@@ -5,7 +5,7 @@ import scalacheck.ScalazProperties
 class TraverseTest extends Spec {
 
   import org.specs2.internal.scalaz._
-  import org.specs2.internal.scalaz.State._
+  import  org.specs2.internal.scalaz.State._
   import std.AllInstances._
   import std.AllFunctions._
   import syntax.traverse._
@@ -62,20 +62,6 @@ class TraverseTest extends Spec {
       val stream = Stream.from(1)
       val s: Option[Stream[Int]] = stream.traverseU((x: Int) => if (x < 3) some(x) else none)
       s must be_===(none)
-    }
-  }
-
-  "combos" should {
-    "traverse large stream over trampolined StateT including IO" in {
-      // Example usage from Eric Torreborre
-      import org.specs2.internal.scalaz.effect._
-
-      val as = Stream.range(0, 100000)
-      val state: State[Int, IO[Stream[Int]]] = as.traverseSTrampoline(a => for {
-        s <- State.get[Int]
-        _ <- State.put(a)
-      } yield IO(a - s))
-      state.eval(0).unsafePerformIO().take(3) must be_===(Stream(0, 1, 1))
     }
   }
 

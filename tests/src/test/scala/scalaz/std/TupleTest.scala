@@ -1,7 +1,7 @@
 package org.specs2.internal.scalaz
 package std
 
-import std.AllInstances._
+import AllInstances._
 import org.specs2.internal.scalaz.scalacheck.ScalazProperties._
 import org.specs2.internal.scalaz.scalacheck.ScalazArbitrary._
 
@@ -49,17 +49,17 @@ class TupleTest extends Spec {
   checkAll("Tuple1", comonad.laws[Tuple1])
   checkAll("Tuple2", comonad.laws[({type λ[α]=(Int, α)})#λ])
 
+  import tuple.tupleSyntax._
   "syntax" should {
-    import std.tuple.tupleSyntax._
     "mapElements" in {
        (1, 2).mapElements(_1 = 2 *) must be_===((2, 2))
     }
     "toIndexedSeq" in {
-      val as: IndexedSeq[Int] = (1, 2).toIndexedSeq
+      val as: IndexedSeq[Int] = ToTuple2Ops(1, 2).toIndexedSeq
       as.toList must be_===(List(1, 2))
     }
     "fold" in {
-      (1, 2).fold(_ + _) must be_===(3)
+      ToTuple2Ops(1, 2).fold(_ + _) must be_===(3)
     }
   }
 
