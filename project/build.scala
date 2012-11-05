@@ -12,7 +12,7 @@ object build extends Build {
   lazy val standardSettings: Seq[Sett] = Defaults.defaultSettings ++ Seq[Sett](
     organization := "org.specs2",
     scalaVersion := "2.10.0-RC2",
-    version      := "7.0-SNAPSHOT",
+    version      := "7.0.0-M2",
     crossVersion := CrossVersion.full,
     name         := "scalaz",
     resolvers += "Sonatype Releases" at "https://oss.sonatype.org/content/repositories/releases",
@@ -112,7 +112,8 @@ object build extends Build {
     base = file("effect"),
     settings = standardSettings ++ Seq[Sett](
       name := "scalaz-effect",
-      typeClasses := TypeClass.effect
+      typeClasses := TypeClass.effect,
+      osgiExport("scalaz.effect", "scalaz.std.effect", "scalaz.syntax.effect")
     ),
     dependencies = Seq(core)
   )

@@ -2,7 +2,8 @@ package org.specs2.internal.scalaz.std
 
 trait AllInstances
   extends AnyValInstances with FunctionInstances with ListInstances with MapInstances
-  with OptionInstances with SetInstances with StringInstances with StreamInstances with TupleInstances
+  with OptionInstances with SetInstances with StringInstances with StreamInstances
+  with TupleInstances with VectorInstances
   with EitherInstances with PartialFunctionInstances with TypeConstraintInstances
   with org.specs2.internal.scalaz.std.math.BigDecimalInstances with org.specs2.internal.scalaz.std.math.BigInts
   with org.specs2.internal.scalaz.std.math.OrderingInstances

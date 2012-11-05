@@ -3,6 +3,7 @@ package org.specs2.internal.scalaz
 import std.AllInstances._
 import org.specs2.internal.scalaz.scalacheck.ScalazProperties._
 import org.specs2.internal.scalaz.scalacheck.ScalazArbitrary._
+import Tree._
 
 class TreeTest extends Spec {
 
@@ -19,5 +20,16 @@ class TreeTest extends Spec {
     // TODO checkAll("Tree", traverse.laws[Tree])
     checkAll("Tree", applicative.laws[Tree])
     checkAll("Tree", comonad.laws[Tree])
+  }
+
+  "A tree must can be rendered as an ASCII string" >> {
+      node(1, Stream(node(2, Stream(leaf(3))), leaf(4))).drawTree must_== Seq(
+      "1",
+      "|",
+      "+- 2",
+      "|  |",
+      "|  `- 3",
+      "|",
+      "`- 4").mkString("", "\n", "\n")
   }
 }

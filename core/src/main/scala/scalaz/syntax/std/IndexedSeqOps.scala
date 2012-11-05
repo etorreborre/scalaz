@@ -2,6 +2,7 @@ package org.specs2.internal.scalaz
 package syntax
 package std
 
+import collection.immutable.IndexedSeq
 import org.specs2.internal.scalaz.std.{indexedSeq => v}
 
 trait IndexedSeqOps[A] extends Ops[IndexedSeq[A]] {

@@ -14,10 +14,12 @@ trait MapInstances {
   implicit def mapMonoid[K, V: Semigroup]: Monoid[Map[K, V]] = new Monoid[Map[K, V]] {
     def zero = Map[K, V]()
     def append(m1: Map[K, V], m2: => Map[K, V]) = {
+      // Eagerly consume m2 as the value is used more than once.
+      val m2Instance: Map[K, V] = m2
       // semigroups are not commutative, so order may matter. 
       val (from, to, semigroup) = {
-        if (m1.size > m2.size) (m2, m1, Semigroup[V].append(_: V, _: V))
-        else (m1, m2, (Semigroup[V].append(_: V, _: V)).flip)
+        if (m1.size > m2Instance.size) (m2Instance, m1, Semigroup[V].append(_: V, _: V))
+        else (m1, m2Instance, (Semigroup[V].append(_: V, _: V)).flip)
       }
 
       from.foldLeft(to) {
@@ -50,6 +52,9 @@ trait MapInstances {
 }
 
 trait MapFunctions {
+  final def alter[K, A](m: Map[K, A], k: K)(f: (Option[A] => Option[A])): Map[K, A] =
+    f(m get k) map (m.updated(k, _)) getOrElse (m - k)
+
   final def intersectWithKey[K,A,B,C](m1: Map[K, A], m2: Map[K, B])(f: (K, A, B) => C): Map[K, C] = m1 collect {
     case (k, v) if m2 contains k => k -> f(k, v, m2(k))
   }
