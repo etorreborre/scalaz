@@ -11,7 +11,7 @@ object build extends Build {
 
   lazy val standardSettings: Seq[Sett] = Defaults.defaultSettings ++ Seq[Sett](
     organization := "org.specs2",
-    scalaVersion := "2.10.0-M7",
+    scalaVersion := "2.10.0-RC2",
     version      := "7.0-SNAPSHOT",
     crossVersion := CrossVersion.full,
     name         := "scalaz",
@@ -169,7 +169,7 @@ object build extends Build {
     dependencies = Seq(core, concurrent, typelevel),
     settings     = standardSettings ++ Seq[Sett](
       name := "scalaz-scalacheck-binding",
-      libraryDependencies += "org.scalacheck" %% "scalacheck" % "1.10.0" cross CrossVersion.full
+      libraryDependencies += "org.scalacheck" % "scalacheck_2.10.0-RC1" % "1.10.0" cross CrossVersion.full
     )
   )
 
@@ -180,8 +180,8 @@ object build extends Build {
     settings = standardSettings ++Seq[Sett](
       name := "scalaz-tests",
       libraryDependencies ++= Seq(
-        "org.specs2" %% "specs2" % "1.12.1.1" % "test" cross CrossVersion.full,
-        "org.scalacheck" %% "scalacheck" % "1.10.0" % "test" cross CrossVersion.full
+        "org.specs2" % "specs2" % "1.12.1.1_2.10.0-M7" % "test" cross CrossVersion.full,
+        "org.scalacheck" % "scalacheck_2.10.0-M7" % "1.10.0" % "test" cross CrossVersion.full
       )
     )
   )
