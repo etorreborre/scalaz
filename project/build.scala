@@ -11,7 +11,7 @@ object build extends Build {
 
   lazy val standardSettings: Seq[Sett] = Defaults.defaultSettings ++ Seq[Sett](
     organization := "org.specs2",
-    scalaVersion := "2.10.0-RC2",
+    scalaVersion := "2.10.0-RC3",
     version      := "7.0.0-M2",
     crossVersion := CrossVersion.full,
     name         := "scalaz",
@@ -38,7 +38,6 @@ object build extends Build {
       val index = out / "index.html"
       if (index.exists()) Desktop.getDesktop.open(out / "index.html")
     },
-    credentials += Credentials("Sonatype Nexus Repository Manager", "oss.sonatype.org", "etorreborre", "kela22"), //Path.userHome / ".ivy2" / ".credentials"),
     publishTo <<= version { v: String =>
       val nexus = "https://oss.sonatype.org/"
       if (v.trim.endsWith("SNAPSHOT")) Some("sonatype-snapshots" at nexus + "content/repositories/snapshots")
