@@ -11,7 +11,7 @@ object build extends Build {
 
   lazy val standardSettings: Seq[Sett] = Defaults.defaultSettings ++ Seq[Sett](
     organization := "org.specs2",
-    scalaVersion := "2.10.0-RC3",
+    scalaVersion := "2.10.0-RC5",
     version      := "7.0.0-M2",
     crossVersion := CrossVersion.full,
     name         := "scalaz",
