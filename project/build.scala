@@ -11,11 +11,11 @@ object build extends Build {
 
   lazy val standardSettings: Seq[Sett] = Defaults.defaultSettings ++ Seq[Sett](
     organization := "org.specs2",
-    scalaVersion := "2.10.0-RC5",
-    version      := "7.0.0-M2",
+    scalaVersion := "2.10.0",
+    version      := "7.0.0",
     crossVersion := CrossVersion.full,
     name         := "scalaz",
-    resolvers += "Sonatype Releases" at "https://oss.sonatype.org/content/repositories/releases",
+    resolvers += "Sonatype Releases" at "http://oss.sonatype.org/content/repositories/releases",
     scalacOptions <++= (scalaVersion).map((sv: String) => Seq("-deprecation", "-unchecked") ++ (if(sv.contains("2.10")) None else Some("-Ydependent-method-types"))),
     scalacOptions in (Compile, doc) <++= (baseDirectory in LocalProject("scalaz")).map {
       bd => Seq("-sourcepath", bd.getAbsolutePath, "-doc-source-url", "https://github.com/scalaz/scalaz/tree/scalaz-seven€{FILE_PATH}.scala")
