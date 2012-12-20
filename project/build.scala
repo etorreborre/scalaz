@@ -13,7 +13,6 @@ object build extends Build {
     organization := "org.specs2",
     scalaVersion := "2.10.0",
     version      := "7.0.0",
-    crossVersion := CrossVersion.full,
     name         := "scalaz",
     resolvers += "Sonatype Releases" at "http://oss.sonatype.org/content/repositories/releases",
     scalacOptions <++= (scalaVersion).map((sv: String) => Seq("-deprecation", "-unchecked") ++ (if(sv.contains("2.10")) None else Some("-Ydependent-method-types"))),
