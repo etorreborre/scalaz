@@ -16,7 +16,7 @@ object build extends Build {
     name         := "scalaz",
     resolvers += "Sonatype Releases" at "http://oss.sonatype.org/content/repositories/releases",
     scalacOptions <++= (scalaVersion).map((sv: String) => Seq("-deprecation", "-unchecked") ++ (if(sv.contains("2.10")) None else Some("-Ydependent-method-types"))),
-    scalacOptions in (Compile, doc) <++= (baseDirectory in LocalProject("scalaz")).map {
+    scalacOptions in (Compile, doc) <++= (baseDirectory in LocalProject("specs2-scalaz")).map {
       bd => Seq("-sourcepath", bd.getAbsolutePath, "-doc-source-url", "https://github.com/scalaz/scalaz/tree/scalaz-seven€{FILE_PATH}.scala")
     },
     (unmanagedClasspath in Compile) += Attributed.blank(file("dummy")),
@@ -85,10 +85,10 @@ object build extends Build {
     id = "core",
     base = file("core"),
     settings = standardSettings ++ Seq[Sett](
-      name := "scalaz-core",
+      name := "specs2-scalaz-core",
       organization := "org.specs2",
       typeClasses := TypeClass.core,
-      credentials += Credentials("Sonatype Nexus Repository Manager", "oss.sonatype.org", "etorreborre", "kela22"), //Path.userHome / ".ivy2" / ".credentials"),
+      credentials += Credentials(Path.userHome / ".sbt" / "specs2.credentials"),
       (sourceGenerators in Compile) <+= (sourceManaged in Compile) map {
         dir => Seq(generateTupleW(dir))
       }
@@ -99,7 +99,7 @@ object build extends Build {
     id = "concurrent",
     base = file("concurrent"),
     settings = standardSettings ++ Seq[Sett](
-      name := "scalaz-concurrent",
+      name := "specs2-scalaz-concurrent",
       typeClasses := TypeClass.concurrent
     ),
     dependencies = Seq(core, effect)
@@ -201,7 +201,7 @@ object build extends Build {
         Credentials("Sonatype Nexus Repository Manager", "oss.sonatype.org", user, pass)
       case _                           =>
         println("no credentials given. Pass the build.publish.user and build.publish.password system properties or use the ~/.ivy2/.credentials file")
-        Credentials(Path.userHome / ".ivy2" / ".credentials")
+        Credentials(Path.userHome / ".sbt" / "specs2.credentials")
     }
   }
 
