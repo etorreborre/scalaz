@@ -82,7 +82,7 @@ object build extends Build {
   )
 
   lazy val core = Project(
-    id = "core",
+    id = "specs2-core",
     base = file("core"),
     settings = standardSettings ++ Seq[Sett](
       name := "specs2-scalaz-core",
@@ -96,7 +96,7 @@ object build extends Build {
   )
 
   lazy val concurrent = Project(
-    id = "concurrent",
+    id = "specs2-concurrent",
     base = file("concurrent"),
     settings = standardSettings ++ Seq[Sett](
       name := "specs2-scalaz-concurrent",
